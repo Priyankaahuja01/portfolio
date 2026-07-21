@@ -10,8 +10,8 @@ export default function ResumePage() {
   return (
     <section className="py-16 sm:py-24">
       <Container>
-        <p className="font-mono text-eyebrow uppercase text-muted">Résumé</p>
-        <h1 className="mt-6 max-w-[20ch] text-4xl font-semibold text-ink">
+        <p className="text-eyebrow uppercase tracking-wide text-accent">Resume</p>
+        <h1 className="mt-6 max-w-[20ch] font-serif text-4xl text-forest">
           Priyanka Ahuja
         </h1>
         <p className="mt-4 text-xl text-muted-strong">
@@ -21,7 +21,7 @@ export default function ResumePage() {
         {/* Scaffold — replace with rendered résumé + PDF download in the next chunk.
             PDF: /public/Priyanka_Resume_July 20th 2026.pdf (Pri to supply). */}
         <div className="mt-16 rounded-2xl border border-dashed border-line-strong bg-surface p-8">
-          <p className="font-mono text-eyebrow uppercase text-muted">
+          <p className="text-eyebrow uppercase tracking-wide text-muted">
             Scaffold
           </p>
           <p className="mt-3 max-w-prose text-base text-muted-strong">

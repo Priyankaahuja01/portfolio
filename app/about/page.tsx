@@ -11,14 +11,14 @@ export default function AboutPage() {
   return (
     <section className="py-16 sm:py-24">
       <Container>
-        <p className="font-mono text-eyebrow uppercase text-muted">About</p>
-        <h1 className="mt-6 max-w-[20ch] text-4xl font-semibold text-ink">
+        <p className="text-eyebrow uppercase tracking-wide text-accent">About</p>
+        <h1 className="mt-6 max-w-[20ch] font-serif text-4xl text-forest">
           I design products and build the code that ships them.
         </h1>
 
         {/* Scaffold — real About copy lands in the next chunk. */}
         <div className="mt-16 rounded-2xl border border-dashed border-line-strong bg-surface p-8">
-          <p className="font-mono text-eyebrow uppercase text-muted">
+          <p className="text-eyebrow uppercase tracking-wide text-muted">
             Scaffold
           </p>
           <p className="mt-3 max-w-prose text-base text-muted-strong">

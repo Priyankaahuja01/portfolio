@@ -36,30 +36,30 @@ export default async function CaseStudyPage({
       <Container>
         <Link
           href="/#work"
-          className="font-mono text-eyebrow uppercase text-muted transition-colors hover:text-ink"
+          className="text-eyebrow uppercase tracking-wide text-muted transition-colors hover:text-accent"
         >
           ← All work
         </Link>
 
         <div className="mt-8 flex flex-wrap items-center gap-x-4 gap-y-2">
-          <span className="font-mono text-eyebrow uppercase text-muted">
-            {study.index}
+          <span className="text-eyebrow font-medium uppercase tracking-wide text-accent">
+            {study.category}
           </span>
-          <span className="font-mono text-eyebrow uppercase text-muted">
+          <span className="text-eyebrow uppercase tracking-wide text-muted">
             {study.role} · {study.year}
           </span>
         </div>
 
-        <h1 className="mt-4 max-w-[18ch] text-4xl font-semibold text-ink">
+        <h1 className="mt-4 max-w-[18ch] font-serif text-4xl text-forest">
           {study.title}
         </h1>
-        <p className="mt-6 max-w-2xl text-xl text-muted-strong">
+        <p className="mt-6 max-w-2xl text-xl text-ink-soft">
           {study.summary}
         </p>
 
         {/* Scaffold notice — real MDX case-study content lands in the next chunk. */}
         <div className="mt-16 rounded-2xl border border-dashed border-line-strong bg-surface p-8">
-          <p className="font-mono text-eyebrow uppercase text-muted">
+          <p className="text-eyebrow uppercase tracking-wide text-muted">
             Scaffold
           </p>
           <p className="mt-3 max-w-prose text-base text-muted-strong">
