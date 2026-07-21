@@ -16,31 +16,32 @@ export function SiteHeader() {
   }, [pathname]);
 
   function isActive(href: string) {
-    if (href.startsWith("/#")) return pathname === "/";
+    if (href === "/") return pathname === "/";
+    if (href.startsWith("/#")) return false; // section jump, not a page
     return pathname === href || pathname.startsWith(`${href}/`);
   }
 
   return (
-    <header className="sticky top-0 z-40 border-b border-line/80 bg-bg/80 backdrop-blur-md">
+    <header className="sticky top-0 z-40 border-b border-line/70 bg-bg/85 backdrop-blur-md">
       <div className="mx-auto flex h-16 w-full max-w-wide items-center justify-between px-6 sm:px-8 lg:px-10">
         <Link
           href="/"
-          className="text-base font-semibold tracking-tight text-ink transition-colors hover:text-accent"
+          className="font-serif text-lg font-medium text-forest transition-colors hover:text-accent"
         >
           {site.name}
         </Link>
 
         {/* Desktop nav */}
         <nav aria-label="Primary" className="hidden md:block">
-          <ul className="flex items-center gap-8">
+          <ul className="flex items-center gap-9">
             {primaryNav.map((link) => (
               <li key={link.href}>
                 <Link
                   href={link.href}
                   aria-current={isActive(link.href) ? "page" : undefined}
                   className={cn(
-                    "text-sm font-medium transition-colors hover:text-accent",
-                    isActive(link.href) ? "text-ink" : "text-muted-strong",
+                    "font-serif text-lg transition-colors hover:text-accent",
+                    isActive(link.href) ? "text-accent" : "text-ink-soft",
                   )}
                 >
                   {link.label}
@@ -56,7 +57,7 @@ export function SiteHeader() {
           onClick={() => setOpen((v) => !v)}
           aria-expanded={open}
           aria-controls="mobile-nav"
-          className="inline-flex h-10 w-10 items-center justify-center rounded-md text-ink md:hidden"
+          className="inline-flex h-10 w-10 items-center justify-center rounded-md text-forest md:hidden"
         >
           <span className="sr-only">{open ? "Close menu" : "Open menu"}</span>
           <svg
@@ -95,8 +96,8 @@ export function SiteHeader() {
                   href={link.href}
                   aria-current={isActive(link.href) ? "page" : undefined}
                   className={cn(
-                    "block py-3 text-lg font-medium transition-colors hover:text-accent",
-                    isActive(link.href) ? "text-ink" : "text-muted-strong",
+                    "block py-3 font-serif text-xl transition-colors hover:text-accent",
+                    isActive(link.href) ? "text-accent" : "text-ink-soft",
                   )}
                 >
                   {link.label}

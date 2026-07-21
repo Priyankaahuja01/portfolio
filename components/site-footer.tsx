@@ -13,7 +13,7 @@ export function SiteFooter() {
       <div className="mx-auto w-full max-w-wide px-6 py-16 sm:px-8 lg:px-10">
         <div className="flex flex-col gap-12 md:flex-row md:items-start md:justify-between">
           <div className="max-w-md">
-            <p className="text-2xl font-semibold tracking-tight text-ink">
+            <p className="font-serif text-2xl text-forest">
               Let&rsquo;s make something worth shipping.
             </p>
             <a
@@ -26,7 +26,7 @@ export function SiteFooter() {
 
           <div className="grid grid-cols-2 gap-10 sm:gap-16">
             <nav aria-label="Footer">
-              <h2 className="font-mono text-eyebrow uppercase text-muted">
+              <h2 className="text-eyebrow uppercase tracking-wide text-muted">
                 Site
               </h2>
               <ul className="mt-4 space-y-3">
@@ -44,7 +44,7 @@ export function SiteFooter() {
             </nav>
 
             <nav aria-label="Elsewhere">
-              <h2 className="font-mono text-eyebrow uppercase text-muted">
+              <h2 className="text-eyebrow uppercase tracking-wide text-muted">
                 Elsewhere
               </h2>
               <ul className="mt-4 space-y-3">
@@ -82,7 +82,7 @@ export function SiteFooter() {
           <p>
             © {year} {site.name}. Designed &amp; built by Priyanka Ahuja.
           </p>
-          <p className="font-mono text-eyebrow uppercase tracking-wider">
+          <p className="text-eyebrow uppercase tracking-wider">
             Next.js · Tailwind · Vercel
           </p>
         </div>
