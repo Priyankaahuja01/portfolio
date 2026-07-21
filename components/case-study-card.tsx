@@ -1,81 +1,125 @@
 import Link from "next/link";
-import type { CaseStudyMeta } from "@/lib/site";
+import type { CaseStudyMeta, CaseStudyTint } from "@/lib/site";
 import { cn } from "@/lib/cn";
 
-function StatusBadge({ status }: { status: CaseStudyMeta["status"] }) {
-  const label =
-    status === "gated"
-      ? "Password protected"
-      : status === "in-progress"
-        ? "In progress"
-        : "Case study";
-  return (
-    <span className="inline-flex items-center gap-1.5 font-mono text-eyebrow uppercase text-muted">
-      {status === "gated" && (
-        <svg
-          width="12"
-          height="12"
-          viewBox="0 0 24 24"
-          fill="none"
-          stroke="currentColor"
-          strokeWidth="2"
-          aria-hidden="true"
-        >
-          <rect x="5" y="11" width="14" height="9" rx="2" />
-          <path d="M8 11V8a4 4 0 0 1 8 0v3" />
-        </svg>
-      )}
-      {label}
-    </span>
-  );
-}
+const tintStyles: Record<
+  CaseStudyTint,
+  { card: string; eyebrow: string; title: string; body: string; pill: string; arrow: string }
+> = {
+  sage: {
+    card: "bg-tint-sage",
+    eyebrow: "text-accent",
+    title: "text-forest",
+    body: "text-ink-soft",
+    pill: "border-forest/15 bg-cream/70 text-forest",
+    arrow: "bg-cream text-forest",
+  },
+  blush: {
+    card: "bg-tint-blush",
+    eyebrow: "text-accent",
+    title: "text-forest",
+    body: "text-ink-soft",
+    pill: "border-accent/25 bg-cream/70 text-accent",
+    arrow: "bg-cream text-forest",
+  },
+  forest: {
+    card: "bg-forest-deep",
+    eyebrow: "text-tint-blush",
+    title: "text-cream",
+    body: "text-cream/80",
+    pill: "border-cream/25 bg-cream/10 text-cream",
+    arrow: "bg-cream text-forest",
+  },
+};
 
-export function CaseStudyCard({ study }: { study: CaseStudyMeta }) {
+export function CaseStudyCard({
+  study,
+  className,
+}: {
+  study: CaseStudyMeta;
+  className?: string;
+}) {
+  const t = tintStyles[study.tint];
+
   return (
-    <article className="group relative flex flex-col">
+    <article className={cn("group", className)}>
       <Link
         href={`/work/${study.slug}`}
-        className="flex flex-col focus:outline-none"
+        className={cn(
+          "flex h-full flex-col justify-between gap-10 rounded-[28px] p-8 sm:p-10",
+          "transition-all duration-300 hover:-translate-y-1",
+          "hover:shadow-[0_24px_60px_-28px_rgba(53,73,47,0.45)] focus:outline-none",
+          t.card,
+        )}
       >
-        {/* Media placeholder — replace with large real screenshots per CLAUDE.md */}
-        <div
-          className={cn(
-            "relative aspect-[16/10] w-full overflow-hidden rounded-2xl border border-line bg-surface-2",
-            "transition-all duration-300 group-hover:border-line-strong group-hover:shadow-[0_12px_40px_-16px_rgba(0,0,0,0.18)]",
-          )}
-        >
-          <div className="absolute inset-0 flex items-center justify-center">
-            <span className="font-mono text-eyebrow uppercase text-muted/70">
-              {/* TODO: {study.slug} hero image */}
-              Image forthcoming
+        {/* Top row: category eyebrow + arrow button */}
+        <div className="flex items-start justify-between gap-4">
+          <div className="flex flex-wrap items-center gap-x-3 gap-y-1">
+            <span className={cn("text-eyebrow font-medium", t.eyebrow)}>
+              {study.category}
             </span>
+            {study.gated && (
+              <span
+                className={cn(
+                  "inline-flex items-center gap-1 text-eyebrow",
+                  t.body,
+                )}
+              >
+                <svg
+                  width="11"
+                  height="11"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2.2"
+                  aria-hidden="true"
+                >
+                  <rect x="5" y="11" width="14" height="9" rx="2" />
+                  <path d="M8 11V8a4 4 0 0 1 8 0v3" />
+                </svg>
+                Protected
+              </span>
+            )}
           </div>
-          <span className="absolute left-4 top-4 font-mono text-eyebrow text-muted-strong">
-            {study.index}
+
+          <span
+            className={cn(
+              "inline-flex h-12 w-12 shrink-0 items-center justify-center rounded-full",
+              "transition-transform duration-300 group-hover:rotate-45",
+              t.arrow,
+            )}
+            aria-hidden="true"
+          >
+            <svg
+              width="18"
+              height="18"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            >
+              <path d="M7 17L17 7M9 7h8v8" />
+            </svg>
           </span>
         </div>
 
-        <div className="mt-6 flex flex-col">
-          <div className="flex items-center justify-between gap-4">
-            <StatusBadge status={study.status} />
-            <span className="font-mono text-eyebrow uppercase text-muted">
-              {study.year}
-            </span>
-          </div>
-
-          <h3 className="mt-3 text-xl font-semibold tracking-tight text-ink transition-colors group-hover:text-accent">
-            {study.title}
-          </h3>
-
-          <p className="mt-2 max-w-prose text-base text-muted-strong">
+        {/* Body: title, summary, tags */}
+        <div>
+          <h3 className={cn("font-serif text-3xl", t.title)}>{study.title}</h3>
+          <p className={cn("mt-4 max-w-prose text-base", t.body)}>
             {study.summary}
           </p>
 
-          <ul className="mt-4 flex flex-wrap gap-2">
+          <ul className="mt-7 flex flex-wrap gap-2.5">
             {study.tags.map((tag) => (
               <li
                 key={tag}
-                className="rounded-full border border-line bg-bg px-3 py-1 text-eyebrow text-muted-strong"
+                className={cn(
+                  "rounded-full border px-4 py-1.5 text-eyebrow",
+                  t.pill,
+                )}
               >
                 {tag}
               </li>
