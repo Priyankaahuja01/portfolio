@@ -50,7 +50,7 @@ export default async function CaseStudyPage({
           </span>
         </div>
 
-        <h1 className="mt-4 max-w-[18ch] font-serif text-4xl text-forest">
+        <h1 className="mt-4 max-w-[18ch] font-serif text-4xl text-ink">
           {study.title}
         </h1>
         <p className="mt-6 max-w-2xl text-xl text-ink-soft">

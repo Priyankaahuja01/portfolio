@@ -13,7 +13,7 @@ export function SiteFooter() {
       <div className="mx-auto w-full max-w-wide px-6 py-16 sm:px-8 lg:px-10">
         <div className="flex flex-col gap-12 md:flex-row md:items-start md:justify-between">
           <div className="max-w-md">
-            <p className="font-serif text-2xl text-forest">
+            <p className="font-serif text-2xl text-ink">
               Let&rsquo;s make something worth shipping.
             </p>
             <a
