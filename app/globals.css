@@ -1,81 +1,117 @@
 @import "tailwindcss";
 
 /* ------------------------------------------------------------------ *
- * Design tokens — Priyanka Ahuja portfolio design system
- * Warm editorial: cream ground, forest-green serif headings, terracotta
- * accent. Palette carried over from ahujapriyanka.com.
- * Tailwind v4 CSS-first config: tokens below generate utilities
- * (e.g. --color-accent -> bg-accent / text-accent, --text-display -> text-display).
+ * Design tokens — Priyanka Ahuja portfolio
+ * Dark-first. Plum-black ground, off-white serif headings, lavender
+ * signature accent, forest for structure. Light mode is the option.
+ *
+ * Utilities read var(--c-*), which flip on [data-theme]. Default (no
+ * attribute) = dark, so server-rendered HTML is dark with no flash.
  * ------------------------------------------------------------------ */
 @theme {
-  /* Fonts — IBM Plex family, matching the live site */
+  /* Fonts — IBM Plex */
   --font-sans: var(--font-plex-sans), ui-sans-serif, system-ui, sans-serif;
   --font-serif: var(--font-plex-serif), ui-serif, Georgia, serif;
   --font-mono: var(--font-plex-mono), ui-monospace, monospace;
 
-  /* Warm neutrals — cream / sand ground */
-  --color-bg: #faf5ed; /* page cream */
-  --color-cream: #faf5ed; /* alias, for cream text on dark surfaces */
-  --color-surface: #f4ecdd; /* deeper cream — footer, sections */
-  --color-surface-2: #efe6d5;
-  --color-line: #e6dcc9;
-  --color-line-strong: #d8ccb4;
-  --color-muted: #8a7c66; /* warm taupe — secondary text */
-  --color-muted-strong: #695d49;
-  --color-ink: #2c2a24; /* warm near-black — body copy */
-  --color-ink-soft: #453f34;
+  /* Colors (indirection so they flip by theme) */
+  --color-bg: var(--c-bg);
+  --color-surface: var(--c-surface);
+  --color-surface-2: var(--c-surface-2);
+  --color-line: var(--c-line);
+  --color-line-strong: var(--c-line-strong);
+  --color-ink: var(--c-ink);
+  --color-ink-soft: var(--c-ink-soft);
+  --color-muted: var(--c-muted);
+  --color-muted-strong: var(--c-muted-strong);
+  --color-faint: var(--c-faint);
+  --color-accent: var(--c-accent);
+  --color-accent-soft: var(--c-accent-soft);
+  --color-on-accent: var(--c-on-accent);
+  --color-forest: var(--c-forest);
+  --color-btn: var(--c-btn);
+  --color-on-btn: var(--c-on-btn);
+  --color-arrow: var(--c-arrow);
+  --color-on-arrow: var(--c-on-arrow);
 
-  /* Brand */
-  --color-forest: #3f5a3a; /* headings, dark cards */
-  --color-forest-deep: #35492f; /* dark card background */
-  --color-accent: #c55e45; /* terracotta — eyebrows, active nav, links */
-  --color-accent-hover: #a94c35;
-  --color-accent-soft: #f7e9dd;
-
-  /* Case-study card tints */
-  --color-tint-sage: #e7ebdc;
-  --color-tint-blush: #f7e9dd;
-
-  /* Type scale — modular, 17px body base. rem-based, fluid at the top end. */
-  --text-eyebrow: 0.8125rem; /* 13px — category / meta labels */
+  /* Type scale — 17px body base, fluid at the top */
+  --text-eyebrow: 0.8125rem;
   --text-eyebrow--line-height: 1.2;
-  --text-eyebrow--letter-spacing: 0.02em;
+  --text-eyebrow--letter-spacing: 0.12em;
 
-  --text-sm: 0.9375rem; /* 15px */
+  --text-sm: 0.9375rem;
   --text-sm--line-height: 1.5;
-
-  --text-base: 1.0625rem; /* 17px */
+  --text-base: 1.0625rem;
   --text-base--line-height: 1.65;
-
-  --text-lg: 1.25rem; /* 20px */
+  --text-lg: 1.25rem;
   --text-lg--line-height: 1.6;
-
-  --text-xl: 1.5rem; /* 24px */
+  --text-xl: 1.5rem;
   --text-xl--line-height: 1.35;
-
-  --text-2xl: 2rem; /* 32px */
+  --text-2xl: 2rem;
   --text-2xl--line-height: 1.15;
   --text-2xl--letter-spacing: -0.01em;
-
-  --text-3xl: clamp(2.25rem, 1.6rem + 2.6vw, 2.75rem); /* ~36–44px */
+  --text-3xl: clamp(2.25rem, 1.6rem + 2.6vw, 2.75rem);
   --text-3xl--line-height: 1.08;
   --text-3xl--letter-spacing: -0.015em;
-
-  --text-4xl: clamp(2.75rem, 1.7rem + 4.2vw, 3.75rem); /* ~44–60px */
+  --text-4xl: clamp(2.75rem, 1.7rem + 4.2vw, 3.75rem);
   --text-4xl--line-height: 1.04;
   --text-4xl--letter-spacing: -0.02em;
-
-  --text-display: clamp(3rem, 1.5rem + 6vw, 4.75rem); /* ~48–76px hero */
+  --text-display: clamp(3rem, 1.5rem + 6vw, 4.75rem);
   --text-display--line-height: 1;
-  --text-display--letter-spacing: -0.02em;
+  --text-display--letter-spacing: -0.025em;
 
   /* Layout */
   --spacing-gutter: 1.5rem;
-  --container-content: 68rem; /* ~1088px reading/content width */
-  --container-wide: 84rem; /* ~1344px for large case-study media */
+  --container-content: 68rem;
+  --container-wide: 84rem;
 }
 
-/* Base element styles (layered so utility classes always win) */
+/* Dark (default) */
+:root {
+  --c-bg: #17141a;
+  --c-surface: #201b26;
+  --c-surface-2: #2b2433;
+  --c-line: #2f2936;
+  --c-line-strong: #3a3443;
+  --c-ink: #efe9ef;
+  --c-ink-soft: #d9d3da;
+  --c-muted: #a49eaa;
+  --c-muted-strong: #bdb7c2;
+  --c-faint: #7d7682;
+  --c-accent: #c7a3d6; /* lavender */
+  --c-accent-soft: #2b2433;
+  --c-on-accent: #17141a;
+  --c-forest: #93b184;
+  --c-btn: #efe9ef;
+  --c-on-btn: #17141a;
+  --c-arrow: #2b2433;
+  --c-on-arrow: #c7a3d6;
+  color-scheme: dark;
+}
+
+/* Light (opt-in) */
+:root[data-theme="light"] {
+  --c-bg: #fcfbf9;
+  --c-surface: #f3eff9; /* soft lavender tile */
+  --c-surface-2: #e8e0f3;
+  --c-line: #e4dcf1;
+  --c-line-strong: #d8cceb;
+  --c-ink: #16130f;
+  --c-ink-soft: #3a352f;
+  --c-muted: #7c7487;
+  --c-muted-strong: #5c5668;
+  --c-faint: #9a9391;
+  --c-accent: #6d3a6a; /* plum */
+  --c-accent-soft: #efe9f6;
+  --c-on-accent: #ffffff;
+  --c-forest: #3f5a3a;
+  --c-btn: #16130f;
+  --c-on-btn: #fcfbf9;
+  --c-arrow: #ffffff;
+  --c-on-arrow: #6d3a6a;
+  color-scheme: light;
+}
+
 @layer base {
   html {
     -webkit-text-size-adjust: 100%;
@@ -93,20 +129,27 @@
     -moz-osx-font-smoothing: grayscale;
   }
 
-  /* Headings: serif, forest green, medium weight — the editorial voice.
-     Override per-context with utilities (e.g. text-cream on dark cards). */
+  /* Headings: serif, primary ink, medium weight. Override per-context. */
   h1,
   h2,
   h3,
   h4 {
     font-family: var(--font-serif);
-    color: var(--color-forest);
+    color: var(--color-ink);
     font-weight: 500;
     letter-spacing: -0.01em;
   }
 }
 
-/* Respect reduced-motion */
+/* Theme-aware surfaces transition smoothly on toggle */
+body,
+.theme-x {
+  transition:
+    background-color 0.3s ease,
+    border-color 0.3s ease,
+    color 0.3s ease;
+}
+
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
@@ -120,15 +163,13 @@
   }
 }
 
-/* Accessible focus ring — visible on keyboard nav */
 :focus-visible {
   outline: 2px solid var(--color-accent);
   outline-offset: 2px;
   border-radius: 2px;
 }
 
-/* Selection */
 ::selection {
   background: var(--color-accent);
-  color: #faf5ed;
+  color: var(--color-on-accent);
 }
