@@ -26,7 +26,7 @@ export const primaryNav: NavLink[] = [
 
 export const socialLinks: NavLink[] = [
   { label: "Email", href: "mailto:priyankaahuja0532@gmail.com" },
-  { label: "LinkedIn", href: "https://www.linkedin.com/in/priyankaahuja01/" },
+  { label: "LinkedIn", href: "https://www.linkedin.com/in/priyankaahuja0107/" },
   { label: "GitHub", href: "https://github.com/Priyankaahuja01" },
 ];
 
@@ -39,7 +39,7 @@ export type CaseStudyMeta = {
   slug: string;
   index: string; // "01", "02", ... — display order
   title: string;
-  category: string; // short domain label, shown as the terracotta eyebrow
+  category: string; // short domain label, shown as the accent eyebrow
   summary: string;
   role: string;
   year: string;
@@ -47,6 +47,8 @@ export type CaseStudyMeta = {
   tint: CaseStudyTint;
   status: CaseStudyStatus;
   gated?: boolean;
+  featured?: boolean; // render as the wide feature tile
+  image?: string; // /public path to the tile image; placeholder if absent
 };
 
 /**
@@ -66,6 +68,7 @@ export const caseStudies: CaseStudyMeta[] = [
     tags: ["Crisis response", "0→1", "Full-stack", "Figma"],
     tint: "forest",
     status: "in-progress",
+    featured: true,
   },
   {
     slug: "gestation-calculator",
@@ -106,6 +109,7 @@ export const caseStudies: CaseStudyMeta[] = [
     tags: ["Fintech", "Design system", "Figma"],
     tint: "blush",
     status: "in-progress",
+    image: "/work/greenstand/wallet-home.jpg",
   },
   {
     slug: "uw-extension",
