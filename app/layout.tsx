@@ -60,8 +60,8 @@ export const metadata: Metadata = {
 };
 
 // Runs before first paint: apply the saved theme so there's no flash.
-// Default is dark (no attribute); only an explicit "light" choice is set.
-const themeScript = `(function(){try{var t=localStorage.getItem('theme');if(t==='light'){document.documentElement.setAttribute('data-theme','light');}}catch(e){}})();`;
+// Default is light (no attribute); only an explicit "dark" choice is set.
+const themeScript = `(function(){try{var t=localStorage.getItem('theme');if(t==='dark'){document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();`;
 
 export default function RootLayout({
   children,

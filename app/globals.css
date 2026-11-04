@@ -66,31 +66,8 @@
   --container-wide: 84rem;
 }
 
-/* Dark (default) */
+/* Light (default) */
 :root {
-  --c-bg: #17141a;
-  --c-surface: #201b26;
-  --c-surface-2: #2b2433;
-  --c-line: #2f2936;
-  --c-line-strong: #3a3443;
-  --c-ink: #efe9ef;
-  --c-ink-soft: #d9d3da;
-  --c-muted: #a49eaa;
-  --c-muted-strong: #bdb7c2;
-  --c-faint: #7d7682;
-  --c-accent: #c7a3d6; /* lavender */
-  --c-accent-soft: #2b2433;
-  --c-on-accent: #17141a;
-  --c-forest: #93b184;
-  --c-btn: #efe9ef;
-  --c-on-btn: #17141a;
-  --c-arrow: #2b2433;
-  --c-on-arrow: #c7a3d6;
-  color-scheme: dark;
-}
-
-/* Light (opt-in) */
-:root[data-theme="light"] {
   --c-bg: #fcfbf9;
   --c-surface: #f3eff9; /* soft lavender tile */
   --c-surface-2: #e8e0f3;
@@ -110,6 +87,29 @@
   --c-arrow: #ffffff;
   --c-on-arrow: #6d3a6a;
   color-scheme: light;
+}
+
+/* Dark (opt-in via toggle) */
+:root[data-theme="dark"] {
+  --c-bg: #17141a;
+  --c-surface: #201b26;
+  --c-surface-2: #2b2433;
+  --c-line: #2f2936;
+  --c-line-strong: #3a3443;
+  --c-ink: #efe9ef;
+  --c-ink-soft: #d9d3da;
+  --c-muted: #a49eaa;
+  --c-muted-strong: #bdb7c2;
+  --c-faint: #7d7682;
+  --c-accent: #c7a3d6; /* lavender */
+  --c-accent-soft: #2b2433;
+  --c-on-accent: #17141a;
+  --c-forest: #93b184;
+  --c-btn: #efe9ef;
+  --c-on-btn: #17141a;
+  --c-arrow: #2b2433;
+  --c-on-arrow: #c7a3d6;
+  color-scheme: dark;
 }
 
 @layer base {
@@ -172,4 +172,38 @@ body,
 ::selection {
   background: var(--color-accent);
   color: var(--color-on-accent);
+}
+
+/* Orbit hero — each node circles gently in its own spot; labels stay upright
+   (the rotate is cancelled by the counter-rotate). Motion only when allowed. */
+@keyframes orbitFloat {
+  from {
+    transform: rotate(0deg) translateX(8px) rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg) translateX(8px) rotate(-360deg);
+  }
+}
+.orbit-float {
+  will-change: transform;
+}
+@media (prefers-reduced-motion: no-preference) {
+  .orbit-float {
+    animation: orbitFloat 11s linear infinite;
+  }
+}
+.orbit-node:hover .orbit-float,
+.orbit-node:focus-within .orbit-float {
+  animation-play-state: paused;
+}
+
+/* Portrait swaps with theme */
+.portrait-dark {
+  display: none;
+}
+:root[data-theme="dark"] .portrait-light {
+  display: none;
+}
+:root[data-theme="dark"] .portrait-dark {
+  display: block;
 }

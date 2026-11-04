@@ -5,15 +5,15 @@ import { useEffect, useState } from "react";
 type Theme = "dark" | "light";
 
 export function ThemeToggle() {
-  const [theme, setTheme] = useState<Theme>("dark");
+  const [theme, setTheme] = useState<Theme>("light");
   const [mounted, setMounted] = useState(false);
 
   // Sync initial state from what the no-flash script already applied.
   useEffect(() => {
     const current =
-      document.documentElement.getAttribute("data-theme") === "light"
-        ? "light"
-        : "dark";
+      document.documentElement.getAttribute("data-theme") === "dark"
+        ? "dark"
+        : "light";
     setTheme(current);
     setMounted(true);
   }, []);
@@ -21,8 +21,8 @@ export function ThemeToggle() {
   function toggle() {
     const next: Theme = theme === "dark" ? "light" : "dark";
     setTheme(next);
-    if (next === "light") {
-      document.documentElement.setAttribute("data-theme", "light");
+    if (next === "dark") {
+      document.documentElement.setAttribute("data-theme", "dark");
     } else {
       document.documentElement.removeAttribute("data-theme");
     }
@@ -43,8 +43,8 @@ export function ThemeToggle() {
       title={isDark ? "Light mode" : "Dark mode"}
       className="inline-flex h-9 w-9 items-center justify-center rounded-full border border-line text-muted-strong transition-colors hover:border-accent hover:text-accent"
     >
-      {/* Render a stable icon until mounted to avoid hydration mismatch */}
-      {mounted && !isDark ? (
+      {/* Show a sun in dark mode (to go light), a moon in light mode (to go dark). */}
+      {mounted && isDark ? (
         <svg
           width="17"
           height="17"
