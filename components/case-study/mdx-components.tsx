@@ -20,6 +20,12 @@ import {
   GsWalletPhones,
   GsOutcomes,
 } from "./greenstand-blocks";
+import {
+  FourhPersonas,
+  FourhPillars,
+  FourhWireframes,
+  FourhStats,
+} from "./fourh-blocks";
 
 // Prose elements are centered in a readable measure; figures/blocks go wider.
 export const mdxComponents: MDXComponents = {
@@ -85,4 +91,8 @@ export const mdxComponents: MDXComponents = {
   GsAdminFigures,
   GsWalletPhones,
   GsOutcomes,
+  FourhPersonas,
+  FourhPillars,
+  FourhWireframes,
+  FourhStats,
 };

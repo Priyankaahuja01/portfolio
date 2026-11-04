@@ -124,11 +124,12 @@ export const caseStudies: CaseStudyMeta[] = [
     category: "Public Sector",
     summary:
       "Transformed a fragmented 76-page educational ecosystem into a scalable, user-centered platform designed to improve navigation, accessibility, and youth engagement across Wyoming.",
-    role: "UX & front-end",
-    year: "2022",
-    tags: ["Design System", "Elementor", "Survey", "Figma"],
+    role: "UX / Product Designer",
+    year: "2025",
+    tags: ["Information architecture", "Accessibility", "UX survey", "Figma"],
     tint: "sage",
-    status: "in-progress",
+    status: "live",
+    image: "/work/4h/state-opportunities.jpg",
   },
 ];
 
