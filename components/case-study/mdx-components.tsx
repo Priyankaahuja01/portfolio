@@ -32,6 +32,7 @@ import {
   JaxABTests,
   JaxStats,
 } from "./jackson-blocks";
+import { WyoForms, WyoStats } from "./wyoming-blocks";
 
 // Prose elements are centered in a readable measure; figures/blocks go wider.
 export const mdxComponents: MDXComponents = {
@@ -105,4 +106,6 @@ export const mdxComponents: MDXComponents = {
   JaxABDesigns,
   JaxABTests,
   JaxStats,
+  WyoForms,
+  WyoStats,
 };

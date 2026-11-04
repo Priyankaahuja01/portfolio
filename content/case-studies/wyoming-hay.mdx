@@ -1,0 +1,55 @@
+---
+title: "Wyoming Emergency Hay Assistance"
+category: "Crisis Response"
+summary: "When wildfire burned the grass out from under Wyoming ranchers, I designed and built a statewide hay-matching platform in 48 hours — a public board that let neighbors offer and find emergency feed directly."
+role: "Designer & Developer — solo, end to end"
+timeline: "August 2025 · shipped in 48 hours"
+team: "University of Wyoming Extension"
+tools: "Custom intake forms · front-end build"
+---
+
+<Figure src="/work/wyoming/01-hero.jpg" alt="Wyoming Emergency Hay Assistance — a rancher looks out over a field, the site title set large in yellow" plain />
+
+<Lede>In August 2025, the Red Canyon Fire burned the grass out from under Wyoming ranchers — and left their livestock with nothing to eat. I designed and built the Wyoming Emergency Hay Assistance platform for University of Wyoming Extension in 48 hours, so producers who had hay and producers who urgently needed it could find each other directly.</Lede>
+
+This is the piece of work I'm proudest of — not because it was elegant, but because it had to exist by tomorrow, and it did.
+
+<Part n="The emergency" label="Context" title="Grass gone, animals hungry, no time">Wildfire is part of life in Wyoming. When the Red Canyon Fire took the grass, ranchers across the state were suddenly feeding livestock with hay they didn't have — while rebuilding everything else.</Part>
+
+Barton Stam, the UW Extension educator in Hot Springs County, needed a way to organize hay donations so they could reach the people who'd lost their pasture — fast, and in a streamlined way. The ask came to me as a developer and designer: build something producers can actually use, and build it now. Not in a sprint cycle. In days.
+
+<Part n="The users" label="Constraints" title="A rancher in a truck, not a designer at a desk">The people this had to serve were in the middle of a crisis: ranchers, many of them older, most reaching the site on a phone from the cab of a truck, on slow rural connections.</Part>
+
+That ruled out almost everything heavy. No accounts to create, no app to install, no onboarding, no learning curve. The whole thing had to load fast and make sense in about ten seconds — because that's all the attention anyone fighting a fire has to spare.
+
+<Part n="The decision" label="Design" title="A public board, not a black box">The fastest way to close a shortage is to let both sides see each other. So I built a public two-sided board — "I have hay" and "I need hay" — where every listing shows county, quantity, and bale type, instead of a matching algorithm or a form that funnels everything through me as the admin.</Part>
+
+The reasoning was about resilience, not just speed. I was the admin — but it's good to have the information out in the open, so people know who's willing to help and where they can ask for help, even when I'm not sitting at my desk. A public board keeps working at 2am. An admin-gated queue only moves as fast as one person can clear it.
+
+Putting contact details in public is a real tradeoff, and I didn't want to make it for anyone. So I resolved it with consent: every intake form ends with a single checkbox — *"I agree to have my contact details displayed publicly on this site."* Listing is opt-in, by design.
+
+<Figure src="/work/wyoming/03-listings.jpg" alt="The two-sided listings board: an 'I have hay' table and an 'I need hay' table, each row showing county, quantity, and bale type" caption="The board: “I have hay” and “I need hay,” each listing showing county, quantity, and bale type. Names and emails are blurred here for privacy — on the live site they appear only with the poster's consent." wide />
+
+<Part n="What shipped" label="Build" title="Two forms, one board, live in days">I designed and built the whole thing end to end: two intake forms, the live board they feed, a plain-language “how it works,” a curated set of recovery resources, Extension contacts, and a path to give to the Wyoming Stock Growers Wildfire Relief Fund.</Part>
+
+Both intake forms are deliberately short — the minimum a listing needs to be useful. Request asks for county, quantity needed, urgency, and whether you can transport. Donate asks for county, quantity available, and bale type. Everything else was cut.
+
+<WyoForms />
+
+The "how it works" section does one job: tell a stranger in crisis exactly what to do next, in three steps, for each side.
+
+<Figure src="/work/wyoming/05-howitworks-steps.jpg" alt="Two-column how-it-works: 'Have hay to share' and 'I am looking for hay,' each with three illustrated steps — post, get contacted, arrange pickup or delivery" caption="Two paths, three steps each — post a listing, connect directly, arrange pickup or delivery" />
+
+I rounded it out with the things a recovering producer actually needs next to the board: trusted wildfire-recovery resources, direct Extension contacts, and a way to donate — so the site is a starting point for recovery, not just a bulletin board.
+
+<Part n="The impact" label="Outcome" title="Statewide, during an active fire">The platform launched on August 25, 2025 — during an active fire season — and was adopted across Wyoming.</Part>
+
+It was featured by UW News, Sheridan Media, and Wyoming Public Media, and included among the State of Wyoming's official wildfire-recovery resources. Per Barton Stam, producers used it to source feed for their livestock while the fire was still burning. I built it to be reactivated each fire season — a piece of civic infrastructure that can be switched back on the next time Wyoming needs it.
+
+{/* TODO — PRI: confirm the Governor of Wyoming recognition and give me the source (a letter, post, or press release) so we can state it accurately and link it. Also, any hard numbers Barton can share (tons of hay moved, # producers helped, # counties) would make this ending even stronger. */}
+
+<WyoStats />
+
+### What I'd carry forward
+
+I wanted to learn more about what producers needed beyond hay — but in the middle of a fire, there wasn't the time or the bandwidth to go gather it. So I shipped the smallest thing that got help moving, and kept it simple enough to run itself. That was the right call. In a crisis, the best design isn't the most complete one — it's the one that's live today.
