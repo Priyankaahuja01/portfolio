@@ -26,6 +26,12 @@ import {
   FourhWireframes,
   FourhStats,
 } from "./fourh-blocks";
+import {
+  JaxMobileScreens,
+  JaxABDesigns,
+  JaxABTests,
+  JaxStats,
+} from "./jackson-blocks";
 
 // Prose elements are centered in a readable measure; figures/blocks go wider.
 export const mdxComponents: MDXComponents = {
@@ -95,4 +101,8 @@ export const mdxComponents: MDXComponents = {
   FourhPillars,
   FourhWireframes,
   FourhStats,
+  JaxMobileScreens,
+  JaxABDesigns,
+  JaxABTests,
+  JaxStats,
 };

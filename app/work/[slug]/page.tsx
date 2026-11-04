@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
+import { cookies } from "next/headers";
 import { compileMDX } from "next-mdx-remote/rsc";
 import { Container } from "@/components/container";
 import { caseStudies, getCaseStudy } from "@/lib/site";
@@ -10,6 +11,7 @@ import {
 } from "@/lib/case-studies";
 import { mdxComponents } from "@/components/case-study/mdx-components";
 import { CaseStudyHero, type HeroMeta } from "@/components/case-study/case-study-hero";
+import { PasswordGate } from "@/components/case-study/password-gate";
 
 export function generateStaticParams() {
   return caseStudies.map((study) => ({ slug: study.slug }));
@@ -36,6 +38,37 @@ export default async function CaseStudyPage({
   if (!study) notFound();
 
   const source = getCaseStudySource(slug);
+
+  // NDA-courtesy gate: if the study is gated and not yet unlocked, show the
+  // password form instead of the content (content never reaches the HTML).
+  if (study.gated) {
+    const store = await cookies();
+    const unlocked = store.get(`unlocked-${slug}`)?.value === "1";
+    if (!unlocked) {
+      return (
+        <article className="py-16 sm:py-24">
+          <Container>
+            <Link
+              href="/#work"
+              className="text-eyebrow uppercase tracking-wide text-muted transition-colors hover:text-accent"
+            >
+              ← All work
+            </Link>
+            <div className="mx-auto mt-10 max-w-2xl text-center">
+              <p className="text-eyebrow font-medium uppercase text-accent">
+                {study.category}
+              </p>
+              <h1 className="mt-4 font-serif text-4xl text-ink">
+                {study.title}
+              </h1>
+              <p className="mt-6 text-lg text-muted-strong">{study.summary}</p>
+            </div>
+            <PasswordGate slug={slug} />
+          </Container>
+        </article>
+      );
+    }
+  }
 
   // Written case study → render the MDX. Otherwise show the scaffold notice.
   if (source) {

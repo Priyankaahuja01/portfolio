@@ -1,0 +1,71 @@
+---
+title: "The Jackson Laboratory"
+category: "Genomic Research"
+summary: "Redesigning how scientists find and price research mice at Jax — a mobile pricing experience, a usage filter whose first two designs failed before the third shipped, and a search page brought back in line with the design system."
+role: "UX / Product Designer"
+timeline: "2022"
+team: "The Jackson Laboratory · Agile / SAFe"
+tools: "Figma, Maze via Pendo, Crazy Egg"
+---
+
+<Figure src="/work/jackson/hero.jpg" alt="The Jackson Laboratory — genomics imagery with the line Leading the search for tomorrow's cures" plain />
+
+<Lede>The Jackson Laboratory (Jax) breeds and ships research mice to scientists around the world. In 2022 I worked on the team redesigning how those scientists search, compare, and price mice — three linked problems on one search experience.</Lede>
+
+The search page and the datasheet it links to had drifted apart, and key tasks — seeing a price, filtering by who's allowed to use a strain — were harder than they should be. This study covers the three pieces I worked on: mobile pricing, the usage-license filter, and realigning the search page to the design system.
+
+<Part n="Project 1" label="Mobile Pricing" title="Mouse price, on the go">Potential buyers couldn't see pricing or critical product details in the mobile app — they were pushed to the desktop website, a fragmented experience. The goal: surface the pricing panel on mobile, clarify the distinctions between strains, and test where the “view pricing” action should live.</Part>
+
+I mapped the journey of Ron — a scientist who just wants to check a price before reserving mice — and the gaps were obvious: every pricing question became a detour to another device.
+
+<Figure src="/work/jackson/mp-journey.jpg" alt="User journey map for checking mouse pricing on mobile" caption="Journey mapping made the detours — and the drop-off points — visible" />
+
+### From sketches to shipped screens
+
+Sketching let me iterate fast before committing to pixels. I used Jax's blue — trust and clarity, and strong contrast against light backgrounds for accessibility — and put the pricing panel right on the strain page.
+
+<Figure src="/work/jackson/mp-sketches.jpg" alt="Hand sketches of mobile pricing screens" caption="Sketching the pricing panel's placement" />
+
+<JaxMobileScreens />
+
+### What testing showed
+
+I ran an unmoderated usability test (Maze via Pendo) with 8 participants across 4 tasks over two weeks. The ES Cell “view details” option landed well, price differences by location read clearly, and the genotype dropdown worked. The one snag: ES Cell pricing confused people — a file-download icon appeared with no label.
+
+<Figure src="/work/jackson/mp-test.jpg" alt="Heatmap from the mobile pricing usability test" caption="Heatmaps showed where attention landed — and where it didn't" />
+
+<Note>The fix was small but real: move the file-download icon inside the cell-line rows so its purpose is obvious. User satisfaction rose 35% once pricing was viewable on the phone, and PDF downloads climbed as people did more on mobile.</Note>
+
+<Part n="Project 2" label="Legal Facet" title="A filter for who can actually use the mouse">The usage facet only narrowed search to for-profit use. Users couldn't see non-profit options, or strains that need no license at all. The goal: make For-Profit and Non-Profit findable, surface “no license required,” and keep the JAX LEAP program in view.</Part>
+
+<Figure src="/work/jackson/lf-current.jpg" alt="The current usage filter, showing only a for-profit option" caption="The starting point: one option, and no way to see non-profit or license-free strains" />
+
+### Two designs — and both failed
+
+I shortlisted two high-fidelity directions and tested them unmoderated with 24 participants.
+
+<JaxABDesigns />
+
+<JaxABTests />
+
+Design A placed the options up by the search bar — it confused people and closed off a future advanced-search engine. Design B put them on the page-control bar with longer copy — users gave up at the very start. Neither one worked.
+
+### The insight, and the design that shipped
+
+<Note>The failure was the finding. Design A communicated well through short, clear copy, even though its placement didn't. So I kept the clear copy and moved the For-Profit / Non-Profit options — plus “no license required” — into the left filter panel, where users already look for filters.</Note>
+
+<Figure src="/work/jackson/lf-final.jpg" alt="The shipped usage filter: for-profit, non-profit, and no-license options in the left filter panel" caption="The third direction, shipped — the clarity of Design A in the place users expected it" wide />
+
+<Part n="Project 3" label="Design system" title="Bringing the search page back in line">Older Jax pages had drifted from the design system, and the search page no longer matched the datasheet it links to. Over 12 weeks I ran a gap analysis and a now / next / later prioritization matrix, then rebuilt the search page's layout against the existing system — this was applying Jax's design system, not inventing a new one.</Part>
+
+I moved the page heading above the search bar so users know where they are, trialed a welcome-and-marketing block and then cut it when it added nothing, and used Crazy Egg heatmaps to see that people rarely clicked the “featured strains” — so I kept only the few that earned their place. The result is a search page that finally feels like the same product as the rest of Jax.
+
+## What it added up to
+
+<JaxStats />
+
+### What I learned
+
+- **Invest in research early — and treat a failed design as a finding.** The shipped usage filter came straight out of the two directions that didn't work.
+- **Design for the user, not for yourself.** The data, not my preference, decided which featured strains stayed.
+- **In a real Agile / SAFe org you move between processes constantly.** Jax went through a big reorganization while I was there; nothing is permanent, and that's where a lot of the learning was.
