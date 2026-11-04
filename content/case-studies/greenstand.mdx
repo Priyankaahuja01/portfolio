@@ -1,0 +1,109 @@
+---
+title: "Designing Greenstand's system, from brand tokens to the tools people use every day"
+category: "Ecology / Non-profit"
+summary: "I built Greenstand's original brand system, helped the team build Roots, the product design system that grew out of it, and designed the admin console, the Capture Matching tool, and a mobile token wallet for this open-source, global tree-planting platform."
+role: "Product Designer & Researcher"
+timeline: "Apr 2023 – Dec 2024"
+team: "Distributed open-source designers & engineers"
+tools: "Figma, FigJam, interviews, usability testing"
+---
+
+## A platform built by many hands, with no shared visual language
+
+<Lede>Greenstand is an open-source platform that tracks trees and pays the people who plant them. Growers capture photos of trees in the field. Reviewers verify those captures. Organizations fund planting and reward people with tree tokens.</Lede>
+
+Its tools were built by volunteer teams with no shared visual language, so every product looked and behaved differently. Reviewers moving between tools had to learn a new interface each time, and engineers rebuilt the same parts again and again.
+
+## What I owned
+
+<GsOwned />
+
+<Part n="Part 1" label="Design system" title="Brand foundations anyone on the team could pick up">The system had to work for volunteers who might join for a few weeks and never meet the designer. So every rule is written down as a value someone can copy: a hex code, a pixel size, a pairing that is allowed or not.</Part>
+
+<Figure src="/work/greenstand/brand-logo.jpg" alt="Greenstand logo lockups: dark and green marks on white, and white marks on black backgrounds" caption="Logo lockups for light and dark backgrounds, set in Montserrat Bold" />
+
+### Color tokens with defined roles
+
+Each color has a job. Sprout is the main action color; Sunrise and Sunset are limited to small accents so they never compete with it.
+
+<ColorTokens />
+
+### Accessibility decided once, in the tokens
+
+I tested every text and background pairing and sorted them into three groups: safe for all text sizes, safe for large text only, and never. Contributors don't have to run contrast checks — if they use an allowed pairing, the result meets WCAG.
+
+<Note>White text on Sprout looks right but fails contrast, so it sits in the "never" group. Charcoal on Sprout is the allowed version.</Note>
+
+<Figure src="/work/greenstand/brand-contrast-matrix.jpg" alt="Typography-on-color matrix showing pairings suitable for all text sizes, large text only, and not suitable" caption="Contrast matrix: all sizes, large text only, never" />
+
+### A 12-step type scale
+
+Montserrat carries headings and Lato carries body and interface text. Every style lists size, tracking, line height and paragraph spacing, so engineers can implement it without guessing.
+
+<TypeScale />
+
+<Figure src="/work/greenstand/brand-type-scale.jpg" alt="Type scale specimen from the Greenstand style guide" caption="Type scale as documented in the style guide" />
+
+### Elevation and borders
+
+Two shadow levels (Y 5px / 14px blur, and Y 2px / 6px blur, both at 5% opacity) and a single 1px divider at rgba(0,0,0,.125). Fewer choices meant screens built by different people still looked like one product.
+
+<Figure src="/work/greenstand/brand-elevation.jpg" alt="Drop shadow, lines and border specifications" />
+
+### From brand foundations to Roots
+
+These foundations became the starting point for Roots, the product design system the team built next. Roots kept Midnight for text and Sunrise and Sunset as rare accents. It moved the main action color to a darker green, because white text on Sprout failed contrast — the same pairing the contrast matrix had already ruled out.
+
+<Part n="Part 2" label="Capture Matching" title="Helping reviewers verify thousands of tree photos">Growers send in new photos of trees they planted. Before anyone gets paid, a reviewer has to decide whether each new capture shows a tree that's already on record. Done badly, this is slow, repetitive work that leads to mistakes. I worked on the Capture Matching tool, which puts the whole decision on one screen.</Part>
+
+<Figure src="/work/greenstand/capture-matching.jpg" alt="Capture Matching screens: a new capture on the left compared against candidate trees with photo history on the right, in expanded and collapsed states" caption="Expanded and collapsed states of the matching view" />
+
+<GsCapturePoints />
+
+<Part n="Part 3" label="Admin console" title="Managing organizations, growers and planters on one component set">I designed the screens Greenstand's staff and partner organizations use to manage who plants, who funds and who reviews. Organizations can nest inside other organizations, growers belong to contracts, and planters may or may not belong to an organization. The interface had to show those relationships without becoming a wall of tables.</Part>
+
+<GsAdminFigures />
+
+<Figure src="/work/greenstand/admin-planter.jpg" alt="Planter detail panels, edit planter form with photo selection, and planter card variants" caption="Planter detail, edit and card variants, including assigned and unassigned states" />
+
+<Note>Every admin screen uses the same tokens, list rows, modals, filters and green primary action. Volunteer engineers can build a new tool from parts that already exist.</Note>
+
+<Part n="Part 4" label="Token Wallet · Jun – Nov 2024" title="A mobile wallet for earning, sending and redeeming tree tokens">There was no central place to manage and send tree-planting tokens, so businesses and individuals couldn't use them as rewards. The goal was a mobile app that makes sending tokens as easy as sending money, so more tokens circulate and more trees get planted. I was the lead product researcher and designer, covering primary and secondary research, the research plan, usability testing, wireframes and prototypes.</Part>
+
+### Who it's for: Sam, a restaurant owner
+
+Sam wants to reward loyal customers with trees: good for the planet and good for his brand. Today he has limited loyalty options, can't track impact, and finds giving out rewards slow.
+
+<blockquote>"I want a simple way to show my customers I appreciate their business while also making a positive impact on the planet."</blockquote>
+
+<GsPersonaPoints />
+
+<GsWalletPhones />
+
+### The whole app, end to end
+
+Beyond the core send flow, I designed the full wallet app. For first-time users: splash, onboarding, sign-up, account creation, a first-time home tour, notifications and creating a wallet. For returning users: log in and password reset. Then wallets with limits, details, activity and filters, plus sending and requesting tokens by name or QR code, including empty states when a name isn't found.
+
+<Figure src="/work/greenstand/wallet-flowmap.jpg" alt="Figma overview of the full Token Wallet app: first-time and returning user flows, home, wallets, send and request tokens, search and QR code screens" caption="Full flow map from the Figma file" />
+
+### What usability testing showed, and what changed
+
+Participants worked through the main tasks while thinking aloud, and I logged where they struggled.
+
+1. Users wanted a text label on every button, not only icons.
+2. The QR code should also be reachable from the profile.
+3. Wallet and token details looked tappable, but weren't.
+
+Each fix went back into the shared components, so labeled buttons and clear tap targets now apply across the product, not just in the wallet. Next steps: more engaging screens, a web map in the app so people can see where their trees are, and search by token.
+
+## What the system made possible
+
+<GsOutcomes />
+
+### What I learned
+
+In open source, the system is the designer who's always in the room. Writing every rule as a value someone can copy, rather than a principle they have to interpret, is what made it stick with volunteers who come and go.
+
+### Accessibility is cheapest at the token level
+
+Testing color pairings once and publishing the result removed a whole class of review comments. Nobody had to remember to check contrast, because the allowed choices were already safe.
