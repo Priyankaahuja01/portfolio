@@ -22,6 +22,27 @@ export function WyoForms() {
   );
 }
 
+export function WyoPress() {
+  return (
+    <FigureRow
+      items={[
+        {
+          src: "/work/wyoming/press-sheridan.jpg",
+          alt: "Sheridan Media headline: UW Extension Launches Emergency Hay Assistance Site for Producers Facing Wildfires",
+          caption:
+            "Sheridan Media led with the platform by name — August 25, 2025",
+        },
+        {
+          src: "/work/wyoming/press-wpm.jpg",
+          alt: "Wyoming Public Media article citing the emergency hay assistance web page in its Red Canyon Fire coverage, tagged Governor Mark Gordon",
+          caption:
+            "Wyoming Public Media cited it in its Red Canyon Fire coverage, alongside the Governor's emergency declaration",
+        },
+      ]}
+    />
+  );
+}
+
 export function WyoStats() {
   return (
     <StatRow
