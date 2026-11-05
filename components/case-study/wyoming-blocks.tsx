@@ -38,7 +38,7 @@ export function WyoStats() {
         {
           value: "Statewide",
           label:
-            "listed in Wyoming's official wildfire-recovery resources, cited by state public radio",
+            "used across Wyoming, cited by state public radio during the wildfire emergency",
         },
       ]}
     />
