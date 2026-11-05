@@ -31,14 +31,14 @@ export function WyoStats() {
           label: "from the first ask to a live, statewide platform",
         },
         {
-          value: "Statewide",
+          value: "124,709",
           label:
-            "listings spanning Wyoming counties, from Park to Converse to Laramie",
+            "acres burned by the Red Canyon Fire — the emergency the platform answered",
         },
         {
-          value: "Opt-in",
+          value: "Statewide",
           label:
-            "every public listing posted by explicit consent, built into the form",
+            "listed in Wyoming's official wildfire-recovery resources, cited by state public radio",
         },
       ]}
     />
