@@ -101,6 +101,7 @@ export const caseStudies: CaseStudyMeta[] = [
     tint: "sage",
     status: "gated",
     gated: true,
+    image: "/work/jackson/lf-final.jpg",
   },
   {
     slug: "greenstand",
@@ -115,7 +116,7 @@ export const caseStudies: CaseStudyMeta[] = [
     tags: ["Fintech", "Design system", "Figma"],
     tint: "blush",
     status: "in-progress",
-    image: "/work/greenstand/wallet-home.jpg",
+    image: "/work/greenstand/wallet-duo.jpg",
   },
   {
     slug: "uw-extension",
@@ -130,7 +131,7 @@ export const caseStudies: CaseStudyMeta[] = [
     tags: ["Information architecture", "Accessibility", "UX survey", "Figma"],
     tint: "sage",
     status: "live",
-    image: "/work/4h/state-opportunities.jpg",
+    image: "/work/4h/hero.jpg",
   },
 ];
 
