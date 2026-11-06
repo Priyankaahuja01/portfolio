@@ -2,6 +2,7 @@ import Link from "next/link";
 import { Container } from "@/components/container";
 import { CaseStudyCard } from "@/components/case-study-card";
 import { OrbitHero } from "@/components/orbit-hero";
+import { Recognition } from "@/components/recognition";
 import { caseStudies } from "@/lib/site";
 
 export default function Home() {
@@ -14,10 +15,12 @@ export default function Home() {
             <div>
               <div className="mb-5 h-[3px] w-10 bg-accent" aria-hidden="true" />
               <p className="text-eyebrow font-medium uppercase text-accent">
-                Priyanka Ahuja — Product Designer
+                Product Designer
               </p>
               <h1 className="mt-4 max-w-[15ch] font-serif text-display text-ink">
-                Product designer who ships code.
+                I design it.
+                <br />
+                Then I ship it.
               </h1>
               <p className="mt-8 max-w-xl text-xl text-muted-strong">
                 Six-plus years turning real-world problems — from Wyoming
@@ -74,6 +77,9 @@ export default function Home() {
           </div>
         </Container>
       </section>
+
+      {/* Recognition */}
+      <Recognition />
     </>
   );
 }

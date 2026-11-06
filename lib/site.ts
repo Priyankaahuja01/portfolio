@@ -138,3 +138,32 @@ export const caseStudies: CaseStudyMeta[] = [
 export function getCaseStudy(slug: string): CaseStudyMeta | undefined {
   return caseStudies.find((c) => c.slug === slug);
 }
+
+/** Awards & mentorship recognition — shown on the homepage and About. */
+export type RecognitionItem = {
+  title: string;
+  issuer: string;
+  year: string;
+  detail?: string;
+};
+
+export const recognitions: RecognitionItem[] = [
+  {
+    title: "Top 10 UX Testing Mentor",
+    issuer: "ADPList",
+    year: "2026",
+    detail: "Ranked in the global mentor community",
+  },
+  {
+    title: "ACE Bronze Award",
+    issuer: "Association for Communication Excellence",
+    year: "2026",
+    detail: "Education Technology & Design — Website",
+  },
+  {
+    title: "UXPA Mentor",
+    issuer: "UX Professionals Association",
+    year: "Spring 2026",
+    detail: "Selected mentor, mentorship program",
+  },
+];
