@@ -1,30 +1,9 @@
+import Image from "next/image";
 import { Container } from "@/components/container";
 import { recognitions } from "@/lib/site";
 
-function AwardMark() {
-  return (
-    <span
-      className="inline-flex h-10 w-10 items-center justify-center rounded-full bg-surface-2 text-accent"
-      aria-hidden="true"
-    >
-      <svg
-        width="18"
-        height="18"
-        viewBox="0 0 24 24"
-        fill="none"
-        stroke="currentColor"
-        strokeWidth="1.8"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      >
-        <circle cx="12" cy="8" r="5" />
-        <path d="M8.5 12.5 7 22l5-3 5 3-1.5-9.5" />
-      </svg>
-    </span>
-  );
-}
-
-/** Awards & mentorship, driven by `recognitions` in lib/site. */
+/** Awards & mentorship, driven by `recognitions` in lib/site.
+    Each card shows the certificate; clicking opens it full size. */
 export function Recognition() {
   return (
     <section className="pb-8 pt-16">
@@ -38,17 +17,37 @@ export function Recognition() {
           {recognitions.map((r) => (
             <li
               key={r.title}
-              className="flex flex-col rounded-2xl border border-line bg-surface p-7"
+              className="flex flex-col overflow-hidden rounded-2xl border border-line bg-surface"
             >
-              <AwardMark />
-              <h3 className="mt-5 font-serif text-xl text-ink">{r.title}</h3>
-              <p className="mt-2 text-sm text-muted-strong">{r.issuer}</p>
-              <p className="mt-1 text-eyebrow uppercase text-muted">{r.year}</p>
-              {r.detail && (
-                <p className="mt-4 border-t border-line pt-4 text-sm text-muted">
-                  {r.detail}
-                </p>
-              )}
+              <a
+                href={r.cert}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group relative block aspect-[3/2] overflow-hidden bg-surface-2"
+                aria-label={`View ${r.title} certificate`}
+              >
+                <Image
+                  src={r.cert}
+                  alt={`${r.title} — certificate from ${r.issuer}`}
+                  fill
+                  sizes="(max-width: 640px) 100vw, 420px"
+                  className="object-cover object-top transition-transform duration-500 group-hover:scale-[1.03]"
+                />
+                <span className="absolute bottom-3 right-3 rounded-full bg-bg/85 px-3 py-1 text-eyebrow uppercase text-muted-strong opacity-0 backdrop-blur transition-opacity duration-300 group-hover:opacity-100">
+                  View certificate →
+                </span>
+              </a>
+
+              <div className="flex flex-1 flex-col p-6">
+                <h3 className="font-serif text-lg text-ink">{r.title}</h3>
+                <p className="mt-2 text-sm text-muted-strong">{r.issuer}</p>
+                <p className="mt-1 text-eyebrow uppercase text-muted">{r.year}</p>
+                {r.detail && (
+                  <p className="mt-4 border-t border-line pt-4 text-sm text-muted">
+                    {r.detail}
+                  </p>
+                )}
+              </div>
             </li>
           ))}
         </ul>

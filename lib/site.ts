@@ -145,25 +145,29 @@ export type RecognitionItem = {
   issuer: string;
   year: string;
   detail?: string;
+  cert: string; // /public path to the certificate image
 };
 
 export const recognitions: RecognitionItem[] = [
   {
     title: "Top 10 UX Testing Mentor",
     issuer: "ADPList",
-    year: "2026",
+    year: "Jul–Sep 2026",
     detail: "Ranked in the global mentor community",
+    cert: "/awards/adplist.png",
   },
   {
     title: "ACE Bronze Award",
     issuer: "Association for Communication Excellence",
     year: "2026",
     detail: "Education Technology & Design — Website",
+    cert: "/awards/ace.jpg",
   },
   {
     title: "UXPA Mentor",
-    issuer: "UX Professionals Association",
+    issuer: "UXPA International",
     year: "Spring 2026",
-    detail: "Selected mentor, mentorship program",
+    detail: "Certificate of Recognition — mentorship program",
+    cert: "/awards/uxpa.jpg",
   },
 ];
