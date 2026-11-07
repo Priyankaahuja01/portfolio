@@ -11,7 +11,7 @@ export default function ResumePage() {
     <section className="py-16 sm:py-24">
       <Container>
         <p className="text-eyebrow uppercase tracking-wide text-accent">Resume</p>
-        <h1 className="mt-6 max-w-[20ch] font-serif text-4xl text-ink">
+        <h1 className="mt-6 max-w-[20ch] font-display text-4xl text-ink">
           Priyanka Ahuja
         </h1>
         <p className="mt-4 text-xl text-muted-strong">

@@ -89,7 +89,7 @@ export function Part({
           {label}
         </span>
       </div>
-      <h2 className="mt-4 font-serif text-3xl text-ink">{title}</h2>
+      <h2 className="mt-4 font-display text-3xl text-ink">{title}</h2>
       {children && <p className="mt-4 text-lg text-muted-strong">{children}</p>}
     </div>
   );
@@ -120,9 +120,7 @@ export function StatRow({
     <div className="mx-auto my-10 grid max-w-4xl gap-8 sm:grid-cols-3">
       {items.map((it) => (
         <div key={it.label}>
-          <div className="font-serif text-5xl font-semibold text-ink">
-            {it.value}
-          </div>
+          <div className="font-display text-4xl text-ink">{it.value}</div>
           <p className="mt-2 text-sm text-muted">{it.label}</p>
         </div>
       ))}

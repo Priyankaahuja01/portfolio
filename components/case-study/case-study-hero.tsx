@@ -27,7 +27,7 @@ export function CaseStudyHero({
         <p className="text-eyebrow font-medium uppercase text-accent">
           {category}
         </p>
-        <h1 className="mt-4 font-serif text-4xl text-ink">{title}</h1>
+        <h1 className="mt-4 font-display text-4xl text-ink">{title}</h1>
         <p className="mt-6 text-xl leading-relaxed text-muted-strong">
           {summary}
         </p>

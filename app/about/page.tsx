@@ -12,7 +12,7 @@ export default function AboutPage() {
     <section className="py-16 sm:py-24">
       <Container>
         <p className="text-eyebrow uppercase tracking-wide text-accent">About</p>
-        <h1 className="mt-6 max-w-[20ch] font-serif text-4xl text-ink">
+        <h1 className="mt-6 max-w-[20ch] font-display text-4xl text-ink">
           I design products and build the code that ships them.
         </h1>
 

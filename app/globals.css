@@ -9,10 +9,11 @@
  * attribute) = dark, so server-rendered HTML is dark with no flash.
  * ------------------------------------------------------------------ */
 @theme {
-  /* Fonts — IBM Plex */
+  /* Fonts — IBM Plex body + Prata display + Geist Mono accents */
   --font-sans: var(--font-plex-sans), ui-sans-serif, system-ui, sans-serif;
   --font-serif: var(--font-plex-serif), ui-serif, Georgia, serif;
-  --font-mono: var(--font-plex-mono), ui-monospace, monospace;
+  --font-display: var(--font-prata), var(--font-plex-serif), ui-serif, Georgia, serif;
+  --font-mono: var(--font-geist-mono), var(--font-plex-mono), ui-monospace, monospace;
 
   /* Colors (indirection so they flip by theme) */
   --color-bg: var(--c-bg);
@@ -206,4 +207,11 @@ body,
 }
 :root[data-theme="dark"] .portrait-dark {
   display: block;
+}
+
+/* Accent labels in monospace (the small uppercase eyebrows across the site).
+   Unlayered so it reliably overrides the inherited sans body font. */
+.text-eyebrow {
+  font-family: var(--font-mono);
+  letter-spacing: 0.1em;
 }

@@ -17,7 +17,7 @@ export default function Home() {
               <p className="text-eyebrow font-medium uppercase text-accent">
                 Product Designer
               </p>
-              <h1 className="mt-4 max-w-[15ch] font-serif text-display text-ink">
+              <h1 className="mt-4 max-w-[15ch] font-display text-display text-ink">
                 I design it.
                 <br />
                 Then I ship it.
@@ -64,7 +64,7 @@ export default function Home() {
       <section id="work" className="scroll-mt-24 pb-8">
         <Container width="wide">
           <div className="flex items-end justify-between border-b border-line pb-6">
-            <h2 className="font-serif text-2xl text-ink">Selected work</h2>
+            <h2 className="font-display text-2xl text-ink">Selected work</h2>
             <p className="text-eyebrow uppercase text-muted">
               {caseStudies.length} case studies
             </p>

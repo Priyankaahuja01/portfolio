@@ -58,7 +58,7 @@ export default async function CaseStudyPage({
               <p className="text-eyebrow font-medium uppercase text-accent">
                 {study.category}
               </p>
-              <h1 className="mt-4 font-serif text-4xl text-ink">
+              <h1 className="mt-4 font-display text-4xl text-ink">
                 {study.title}
               </h1>
               <p className="mt-6 text-lg text-muted-strong">{study.summary}</p>
@@ -128,7 +128,7 @@ export default async function CaseStudyPage({
           </span>
         </div>
 
-        <h1 className="mt-4 max-w-[18ch] font-serif text-4xl text-ink">
+        <h1 className="mt-4 max-w-[18ch] font-display text-4xl text-ink">
           {study.title}
         </h1>
         <p className="mt-6 max-w-2xl text-xl text-ink-soft">{study.summary}</p>

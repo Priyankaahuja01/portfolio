@@ -37,12 +37,12 @@ import { WyoForms, WyoStats, WyoPress } from "./wyoming-blocks";
 // Prose elements are centered in a readable measure; figures/blocks go wider.
 export const mdxComponents: MDXComponents = {
   h2: ({ children }: { children?: ReactNode }) => (
-    <h2 className="mx-auto mt-16 max-w-2xl font-serif text-3xl text-ink">
+    <h2 className="mx-auto mt-16 max-w-2xl font-display text-3xl text-ink">
       {children}
     </h2>
   ),
   h3: ({ children }: { children?: ReactNode }) => (
-    <h3 className="mx-auto mt-10 max-w-2xl font-serif text-xl text-ink">
+    <h3 className="mx-auto mt-10 max-w-2xl font-display text-xl text-ink">
       {children}
     </h3>
   ),
@@ -76,7 +76,7 @@ export const mdxComponents: MDXComponents = {
     <strong className="font-semibold text-ink">{children}</strong>
   ),
   blockquote: ({ children }: { children?: ReactNode }) => (
-    <blockquote className="mx-auto my-6 max-w-2xl font-serif text-xl italic text-ink">
+    <blockquote className="mx-auto my-6 max-w-2xl font-display text-xl italic text-ink">
       {children}
     </blockquote>
   ),

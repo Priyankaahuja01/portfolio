@@ -8,7 +8,7 @@ export default function NotFound() {
         <p className="text-eyebrow uppercase tracking-wide text-accent">
           Error 404
         </p>
-        <h1 className="mt-6 max-w-[16ch] font-serif text-4xl text-ink">
+        <h1 className="mt-6 max-w-[16ch] font-display text-4xl text-ink">
           This page wandered off.
         </h1>
         <p className="mt-6 max-w-prose text-lg text-muted-strong">

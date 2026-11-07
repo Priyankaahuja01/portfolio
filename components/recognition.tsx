@@ -9,7 +9,7 @@ export function Recognition() {
     <section className="pb-8 pt-16">
       <Container width="wide">
         <div className="flex items-end justify-between border-b border-line pb-6">
-          <h2 className="font-serif text-2xl text-ink">Recognition</h2>
+          <h2 className="font-display text-2xl text-ink">Recognition</h2>
           <p className="text-eyebrow uppercase text-muted">Awards &amp; mentorship</p>
         </div>
 
@@ -39,7 +39,7 @@ export function Recognition() {
               </a>
 
               <div className="flex flex-1 flex-col p-6">
-                <h3 className="font-serif text-lg text-ink">{r.title}</h3>
+                <h3 className="font-display text-lg text-ink">{r.title}</h3>
                 <p className="mt-2 text-sm text-muted-strong">{r.issuer}</p>
                 <p className="mt-1 text-eyebrow uppercase text-muted">{r.year}</p>
                 {r.detail && (

@@ -34,7 +34,7 @@ export function SiteHeader() {
           >
             PA
           </span>
-          <span className="font-serif text-lg font-medium">{site.name}</span>
+          <span className="font-display text-lg">{site.name}</span>
         </Link>
 
         <div className="hidden items-center gap-7 md:flex">
