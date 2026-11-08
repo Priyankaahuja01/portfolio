@@ -121,6 +121,25 @@ export function GsWalletPhones() {
   );
 }
 
+export function GsTeam() {
+  return (
+    <FigureRow
+      items={[
+        {
+          src: "/work/greenstand/design-session.jpg",
+          alt: "The TreeTrader wallet screens open in Figma during a working session with the Greenstand team on a video call",
+          caption: "Designing the TreeTrader wallet live in Figma with the team",
+        },
+        {
+          src: "/work/greenstand/team-call.jpg",
+          alt: "The distributed Greenstand team on a video call over the project's illustrated jungle background",
+          caption: "Built with Greenstand's distributed, global open-source team",
+        },
+      ]}
+    />
+  );
+}
+
 export function GsOutcomes() {
   return (
     <StatRow

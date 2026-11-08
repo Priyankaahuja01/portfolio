@@ -19,6 +19,7 @@ import {
   GsAdminFigures,
   GsWalletPhones,
   GsOutcomes,
+  GsTeam,
 } from "./greenstand-blocks";
 import {
   FourhPersonas,
@@ -98,6 +99,7 @@ export const mdxComponents: MDXComponents = {
   GsAdminFigures,
   GsWalletPhones,
   GsOutcomes,
+  GsTeam,
   FourhPersonas,
   FourhPillars,
   FourhWireframes,
