@@ -41,9 +41,9 @@ const workflow = [
 ];
 
 const beyondPixels = [
-  { label: "Illustrations", src: "/about/illustration.jpg" },
-  { label: "Hiking", src: "/about/hiking.jpg" },
-  { label: "Coffee", src: "/about/coffee.jpg" },
+  { label: "Illustrations", src: "/about/illustration.webp", pos: "object-center" },
+  { label: "Hiking", src: "/about/hiking.jpg", pos: "object-[50%_62%]" },
+  { label: "Coffee & Airports, my Fav.!", src: "/about/coffee.jpg", pos: "object-center" },
 ];
 
 // Paintings gallery, self-portrait first.
@@ -170,18 +170,12 @@ export default function AboutPage() {
         <div className="mt-8 grid grid-cols-3 gap-4">
           {beyondPixels.map((b) => (
             <figure key={b.label} className="m-0">
-              {b.src ? (
-                // eslint-disable-next-line @next/next/no-img-element
-                <img
-                  src={b.src}
-                  alt={b.label}
-                  className="w-full rounded-xl border border-line"
-                />
-              ) : (
-                <div className="flex aspect-[4/5] items-center justify-center rounded-xl border border-dashed border-line-strong bg-surface text-center text-eyebrow uppercase text-faint">
-                  {b.label}
-                </div>
-              )}
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src={b.src}
+                alt={b.label}
+                className={`aspect-square w-full rounded-xl border border-line object-cover ${b.pos}`}
+              />
               <figcaption className="mt-2 text-eyebrow uppercase text-muted">
                 {b.label}
               </figcaption>
