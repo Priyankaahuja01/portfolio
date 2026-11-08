@@ -71,7 +71,6 @@ export const caseStudies: CaseStudyMeta[] = [
     tags: ["Crisis response", "0→1", "Full-stack", "48-hour build"],
     tint: "forest",
     status: "live",
-    featured: true,
     image: "/work/wyoming/01-hero.jpg",
   },
   {

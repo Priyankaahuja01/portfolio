@@ -81,9 +81,9 @@ function Socials() {
 
 function Identity({ compact }: { compact?: boolean }) {
   return (
-    <Link href="/" className="group block">
+    <Link href="/" className={cn("group block", !compact && "text-center")}>
       {!compact && (
-        <span className="block w-[160px] overflow-hidden rounded-xl border border-line bg-surface-2">
+        <span className="mx-auto block w-[150px]">
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
             src="/portrait/pri-portrait-light.png"
@@ -101,16 +101,21 @@ function Identity({ compact }: { compact?: boolean }) {
       )}
       <span
         className={cn(
-          "font-display text-ink transition-colors group-hover:text-accent",
-          compact ? "text-lg" : "mt-4 block text-2xl",
+          "font-display whitespace-nowrap text-ink transition-colors group-hover:text-accent",
+          compact ? "text-lg" : "mt-4 block text-xl",
         )}
       >
         {site.name}
       </span>
       {!compact && (
-        <span className="mt-1 block text-eyebrow uppercase text-muted">
-          Web Dev / Designer @ UW
-        </span>
+        <>
+          <span className="mt-2 block text-eyebrow uppercase leading-relaxed text-muted">
+            Product Designer /<br />Web Developer
+          </span>
+          <span className="mt-1 block text-eyebrow uppercase text-faint">
+            University of Wyoming
+          </span>
+        </>
       )}
     </Link>
   );
