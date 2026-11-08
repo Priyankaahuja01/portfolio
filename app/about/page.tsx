@@ -40,15 +40,27 @@ const workflow = [
   },
 ];
 
-// Beyond-pixels photos. Fill `src` (e.g. "/about/hiking.jpg") when files arrive.
 const beyondPixels = [
-  { label: "Illustrations", src: "" },
-  { label: "Hiking", src: "" },
-  { label: "Coffee", src: "" },
+  { label: "Illustrations", src: "/about/illustration.jpg" },
+  { label: "Hiking", src: "/about/hiking.jpg" },
+  { label: "Coffee", src: "/about/coffee.jpg" },
 ];
 
-// Paintings gallery, self-portrait first. Fill when image files arrive.
-const creativeWorks: { src: string; alt: string }[] = [];
+// Paintings gallery, self-portrait first.
+const creativeWorks: { src: string; alt: string }[] = [
+  { src: "/about/creative/self-portrait.jpg", alt: "Self-portrait oil painting of Priyanka seated at a table" },
+  { src: "/about/creative/pop-art-woman.jpg", alt: "Pop-art painting of a woman shielding her eyes" },
+  { src: "/about/creative/ballerina.jpg", alt: "Painting of a ballerina in a white dress" },
+  { src: "/about/creative/flower-bicycle.jpg", alt: "Painting of a bicycle carrying a basket of colorful flowers" },
+  { src: "/about/creative/profile-woman.jpg", alt: "Minimalist painting of a woman's profile with red lips" },
+  { src: "/about/creative/black-hat.jpg", alt: "Painting of a woman in a black hat and dress" },
+  { src: "/about/creative/flame-hair.jpg", alt: "Abstract painting of a figure with flame-like hair" },
+  { src: "/about/creative/flower-picking.jpg", alt: "Painting of a woman in blue picking flowers" },
+  { src: "/about/creative/umbrella-couple.jpg", alt: "Impressionist painting of a couple with an umbrella in a red forest" },
+  { src: "/about/creative/tree-sunset.jpg", alt: "Painting of a bare tree against a red and yellow sunset" },
+  { src: "/about/creative/guitar-trees.jpg", alt: "Painting of a guitar formed from trees reflected in water" },
+  { src: "/about/creative/gold-abstract.jpg", alt: "Gold and grayscale palette-knife abstract painting" },
+];
 
 export default function AboutPage() {
   return (
