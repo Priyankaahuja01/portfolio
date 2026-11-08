@@ -8,8 +8,7 @@ import {
   Geist_Mono,
 } from "next/font/google";
 import "./globals.css";
-import { SiteHeader } from "@/components/site-header";
-import { SiteFooter } from "@/components/site-footer";
+import { SiteSidebar } from "@/components/site-sidebar";
 
 const plexSans = IBM_Plex_Sans({
   variable: "--font-plex-sans",
@@ -97,7 +96,7 @@ export default function RootLayout({
       suppressHydrationWarning
       className={`${plexSans.variable} ${plexSerif.variable} ${plexMono.variable} ${prata.variable} ${geistMono.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col bg-bg text-ink">
+      <body className="min-h-full bg-bg text-ink">
         <Script
           id="theme-init"
           strategy="beforeInteractive"
@@ -109,11 +108,10 @@ export default function RootLayout({
         >
           Skip to content
         </a>
-        <SiteHeader />
-        <main id="main" className="flex-1">
+        <SiteSidebar />
+        <main id="main" className="min-h-screen lg:pl-72">
           {children}
         </main>
-        <SiteFooter />
       </body>
     </html>
   );

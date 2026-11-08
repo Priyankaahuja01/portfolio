@@ -18,16 +18,17 @@ export type NavLink = {
 };
 
 export const primaryNav: NavLink[] = [
-  { label: "Home", href: "/" },
   { label: "Work", href: "/#work" },
   { label: "About", href: "/about" },
+  { label: "Recognition", href: "/#recognition" },
   { label: "Resume", href: "/resume" },
 ];
 
 export const socialLinks: NavLink[] = [
-  { label: "Email", href: "mailto:priyankaahuja0532@gmail.com" },
   { label: "LinkedIn", href: "https://www.linkedin.com/in/priyankaahuja0107/" },
   { label: "GitHub", href: "https://github.com/Priyankaahuja01" },
+  // TODO: confirm Pri's Instagram handle — placeholder for now.
+  { label: "Instagram", href: "https://www.instagram.com/" },
 ];
 
 export type CaseStudyStatus = "live" | "in-progress" | "gated";

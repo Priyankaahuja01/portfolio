@@ -1,13 +1,12 @@
 import Image from "next/image";
-import { Container } from "@/components/container";
 import { recognitions } from "@/lib/site";
 
 /** Awards & mentorship, driven by `recognitions` in lib/site.
     Each card shows the certificate; clicking opens it full size. */
 export function Recognition() {
   return (
-    <section className="pb-8 pt-16">
-      <Container width="wide">
+    <section id="recognition" className="scroll-mt-24 pt-20">
+      <div>
         <div className="flex items-end justify-between border-b border-line pb-6">
           <h2 className="font-display text-2xl text-ink">Recognition</h2>
           <p className="text-eyebrow uppercase text-muted">Awards &amp; mentorship</p>
@@ -51,7 +50,7 @@ export function Recognition() {
             </li>
           ))}
         </ul>
-      </Container>
+      </div>
     </section>
   );
 }
