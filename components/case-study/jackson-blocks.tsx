@@ -20,7 +20,7 @@ export function JaxMobileScreens() {
         {
           src: "/work/jackson/mp-final-3.jpg",
           alt: "Mobile pricing panel showing price by quantity and location",
-          caption: "The pricing panel — quantity, genotype, and region",
+          caption: "The pricing panel, quantity, genotype, and region",
         },
       ]}
     />
@@ -34,12 +34,12 @@ export function JaxABDesigns() {
         {
           src: "/work/jackson/lf-design-a.jpg",
           alt: "Design A: for-profit and non-profit options placed with the search bar at the top",
-          caption: "Design A — options placed up by the search bar",
+          caption: "Design A, options placed up by the search bar",
         },
         {
           src: "/work/jackson/lf-design-b.jpg",
           alt: "Design B: options on the page-control navigation bar with longer text",
-          caption: "Design B — options on the page-control bar",
+          caption: "Design B, options on the page-control bar",
         },
       ]}
     />
@@ -53,12 +53,12 @@ export function JaxABTests() {
         {
           src: "/work/jackson/lf-test-a.jpg",
           alt: "Heatmap of Design A usability test showing scattered attention",
-          caption: "Design A heatmap — attention scattered; it closed off a future advanced search",
+          caption: "Design A heatmap, attention scattered; it closed off a future advanced search",
         },
         {
           src: "/work/jackson/lf-test-b.jpg",
           alt: "Heatmap of Design B usability test showing users giving up early",
-          caption: "Design B heatmap — users gave up at the start",
+          caption: "Design B heatmap, users gave up at the start",
         },
       ]}
     />
@@ -81,7 +81,7 @@ export function JaxStats() {
         {
           value: "3",
           label:
-            "facet-filter directions tested — the third, built from the first two’s failures, shipped",
+            "facet-filter directions tested, the third, built from the first two’s failures, shipped",
         },
       ]}
     />

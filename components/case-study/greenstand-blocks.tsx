@@ -1,6 +1,6 @@
 import { Owned, Points, FigureRow, StatRow } from "./blocks";
 
-/* Greenstand-specific data blocks — the design-system artifacts the study
+/* Greenstand-specific data blocks, the design-system artifacts the study
    describes, plus its structured lists. Data lives here (passed as no-prop
    components so it survives MDX compilation); prose stays in the MDX. */
 
@@ -145,7 +145,7 @@ export function GsOutcomes() {
   );
 }
 
-/* Greenstand-specific data blocks — the design-system artifacts the study
+/* Greenstand-specific data blocks, the design-system artifacts the study
    describes. Data lives here; prose stays in the MDX. */
 
 const tokens = [

@@ -4,7 +4,7 @@ import { cookies } from "next/headers";
 
 export type UnlockState = { ok: boolean; error?: string } | null;
 
-// NDA-courtesy gate for the Jackson Lab study. Not a security boundary —
+// NDA-courtesy gate for the Jackson Lab study. Not a security boundary, 
 // the password unlocks the written content; it isn't account protection.
 const PASSWORD = process.env.CASE_STUDY_PASSWORD || "Go@123";
 

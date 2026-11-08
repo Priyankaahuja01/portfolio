@@ -52,8 +52,8 @@ const siteUrl = "https://www.ahujapriyanka.com";
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: {
-    default: "Priyanka Ahuja — Product Designer who ships code",
-    template: "%s — Priyanka Ahuja",
+    default: "Priyanka Ahuja · Product Designer & Web Developer",
+    template: "%s · Priyanka Ahuja",
   },
   description:
     "Priyanka Ahuja is a product designer who ships code. 6+ years designing and building across fintech, public-sector, and research-heavy domains.",
@@ -66,7 +66,7 @@ export const metadata: Metadata = {
   ],
   authors: [{ name: "Priyanka Ahuja" }],
   openGraph: {
-    title: "Priyanka Ahuja — Product Designer who ships code",
+    title: "Priyanka Ahuja · Product Designer & Web Developer",
     description:
       "6+ years designing and building across fintech, public-sector, and research-heavy domains.",
     url: siteUrl,
@@ -75,7 +75,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Priyanka Ahuja — Product Designer who ships code",
+    title: "Priyanka Ahuja · Product Designer & Web Developer",
     description:
       "6+ years designing and building across fintech, public-sector, and research-heavy domains.",
   },

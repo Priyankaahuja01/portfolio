@@ -3,7 +3,7 @@ import { Container } from "@/components/container";
 
 export const metadata: Metadata = {
   title: "Résumé",
-  description: "Résumé of Priyanka Ahuja — Product Designer who ships code.",
+  description: "Résumé of Priyanka Ahuja, Product Designer who ships code.",
 };
 
 export default function ResumePage() {
@@ -18,7 +18,7 @@ export default function ResumePage() {
           Product Designer who ships code
         </p>
 
-        {/* Scaffold — replace with rendered résumé + PDF download in the next chunk.
+        {/* Scaffold, replace with rendered résumé + PDF download in the next chunk.
             PDF: /public/Priyanka_Resume_July 20th 2026.pdf (Pri to supply). */}
         <div className="mt-16 rounded-2xl border border-dashed border-line-strong bg-surface p-8">
           <p className="text-eyebrow uppercase tracking-wide text-muted">

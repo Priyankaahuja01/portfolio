@@ -25,20 +25,21 @@ export const primaryNav: NavLink[] = [
 ];
 
 export const socialLinks: NavLink[] = [
+  { label: "Email", href: "mailto:priyankaahuja0532@gmail.com" },
   { label: "LinkedIn", href: "https://www.linkedin.com/in/priyankaahuja0107/" },
   { label: "GitHub", href: "https://github.com/Priyankaahuja01" },
-  // TODO: confirm Pri's Instagram handle — placeholder for now.
+  // TODO: confirm Pri's Instagram handle (placeholder for now).
   { label: "Instagram", href: "https://www.instagram.com/" },
 ];
 
 export type CaseStudyStatus = "live" | "in-progress" | "gated";
 
-/** Card background tint — drives the warm editorial rhythm on the work grid. */
+/** Card background tint, drives the warm editorial rhythm on the work grid. */
 export type CaseStudyTint = "sage" | "blush" | "forest";
 
 export type CaseStudyMeta = {
   slug: string;
-  index: string; // "01", "02", ... — display order
+  index: string; // "01", "02", ..., display order
   title: string;
   short: string; // short label for the orbit hero node
   category: string; // short domain label, shown as the accent eyebrow
@@ -54,7 +55,7 @@ export type CaseStudyMeta = {
 };
 
 /**
- * Order matters — this drives the homepage "selected work" order.
+ * Order matters, this drives the homepage "selected work" order.
  * See CLAUDE.md "Case study lineup".
  */
 export const caseStudies: CaseStudyMeta[] = [
@@ -65,7 +66,7 @@ export const caseStudies: CaseStudyMeta[] = [
     short: "Wyoming Hay",
     category: "Crisis Response",
     summary:
-      "When wildfire burned the grass out from under Wyoming ranchers, I designed and built a crisis-response platform in 48 hours — a public board that let neighbors offer and find emergency hay directly. Launched statewide with University of Wyoming Extension.",
+      "When wildfire burned the grass out from under Wyoming ranchers, I designed and built a crisis-response platform in 48 hours, a public board that let neighbors offer and find emergency hay directly. Launched statewide with University of Wyoming Extension.",
     role: "Design & build (end-to-end)",
     year: "2025",
     tags: ["Crisis response", "0→1", "Full-stack", "48-hour build"],
@@ -94,7 +95,7 @@ export const caseStudies: CaseStudyMeta[] = [
     short: "Jackson Lab",
     category: "Genomic Research",
     summary:
-      "Research-driven work across mobile pricing and a legal facet panel where both tested designs failed — and the failure became the insight that shaped the third, shipped direction.",
+      "Research-driven work across mobile pricing and a legal facet panel where both tested designs failed, and the failure became the insight that shaped the third, shipped direction.",
     role: "UX design & research",
     year: "2022",
     tags: ["Research", "Enterprise", "Design systems"],
@@ -110,7 +111,7 @@ export const caseStudies: CaseStudyMeta[] = [
     short: "Greenstand",
     category: "Ecology / Non-profit",
     summary:
-      "A token wallet and design system for a global tree-planting nonprofit — turning field data into a trustworthy, verifiable record of impact.",
+      "A token wallet and design system for a global tree-planting nonprofit, turning field data into a trustworthy, verifiable record of impact.",
     role: "Product design & design systems",
     year: "2021",
     tags: ["Fintech", "Design system", "Figma"],
@@ -139,7 +140,7 @@ export function getCaseStudy(slug: string): CaseStudyMeta | undefined {
   return caseStudies.find((c) => c.slug === slug);
 }
 
-/** Awards & mentorship recognition — shown on the homepage and About. */
+/** Awards & mentorship recognition, shown on the homepage and About. */
 export type RecognitionItem = {
   title: string;
   issuer: string;
@@ -160,14 +161,14 @@ export const recognitions: RecognitionItem[] = [
     title: "ACE Bronze Award",
     issuer: "Association for Communication Excellence",
     year: "2026",
-    detail: "Education Technology & Design — Website",
+    detail: "Education Technology & Design, Website",
     cert: "/awards/ace.jpg",
   },
   {
     title: "UXPA Mentor",
     issuer: "UXPA International",
     year: "Spring 2026",
-    detail: "Certificate of Recognition — mentorship program",
+    detail: "Certificate of Recognition, mentorship program",
     cert: "/awards/uxpa.jpg",
   },
 ];

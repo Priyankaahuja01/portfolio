@@ -138,7 +138,7 @@ export default async function CaseStudyPage({
             In progress
           </p>
           <p className="mt-3 max-w-prose text-base text-muted-strong">
-            This case study is being written. Check back soon — or explore the
+            This case study is being written. Check back soon, or explore the
             studies that are live from the work grid.
           </p>
         </div>

@@ -1,7 +1,7 @@
 import { FigureRow, StatRow } from "./blocks";
 
 /* Wyoming Emergency Hay Assistance data blocks (no-prop, so arrays survive
-   MDX compilation — see greenstand-blocks for the why). */
+   MDX compilation, see greenstand-blocks for the why). */
 
 export function WyoForms() {
   return (
@@ -10,12 +10,12 @@ export function WyoForms() {
         {
           src: "/work/wyoming/09-request-form.jpg",
           alt: "Request Hay intake form: name, phone, email, county, quantity needed, urgency",
-          caption: "Request Hay — for producers who need feed",
+          caption: "Request Hay, for producers who need feed",
         },
         {
           src: "/work/wyoming/11-donate-form.jpg",
           alt: "Donate Hay intake form: name, phone, email, county, quantity available, bale type",
-          caption: "Donate Hay — for producers who have feed to share",
+          caption: "Donate Hay, for producers who have feed to share",
         },
       ]}
     />
@@ -30,7 +30,7 @@ export function WyoPress() {
           src: "/work/wyoming/press-sheridan.jpg",
           alt: "Sheridan Media headline: UW Extension Launches Emergency Hay Assistance Site for Producers Facing Wildfires",
           caption:
-            "Sheridan Media led with the platform by name — August 25, 2025",
+            "Sheridan Media led with the platform by name, August 25, 2025",
         },
         {
           src: "/work/wyoming/press-wpm.jpg",
@@ -54,7 +54,7 @@ export function WyoStats() {
         {
           value: "124,709",
           label:
-            "acres burned by the Red Canyon Fire — the emergency the platform answered",
+            "acres burned by the Red Canyon Fire, the emergency the platform answered",
         },
         {
           value: "Statewide",

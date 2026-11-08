@@ -1,7 +1,7 @@
 @import "tailwindcss";
 
 /* ------------------------------------------------------------------ *
- * Design tokens — Priyanka Ahuja portfolio
+ * Design tokens, Priyanka Ahuja portfolio
  * Dark-first. Plum-black ground, off-white serif headings, lavender
  * signature accent, forest for structure. Light mode is the option.
  *
@@ -9,7 +9,7 @@
  * attribute) = dark, so server-rendered HTML is dark with no flash.
  * ------------------------------------------------------------------ */
 @theme {
-  /* Fonts — IBM Plex body + Prata display + Geist Mono accents */
+  /* Fonts, IBM Plex body + Prata display + Geist Mono accents */
   --font-sans: var(--font-plex-sans), ui-sans-serif, system-ui, sans-serif;
   --font-serif: var(--font-plex-serif), ui-serif, Georgia, serif;
   --font-display: var(--font-prata), var(--font-plex-serif), ui-serif, Georgia, serif;
@@ -35,7 +35,7 @@
   --color-arrow: var(--c-arrow);
   --color-on-arrow: var(--c-on-arrow);
 
-  /* Type scale — 17px body base, fluid at the top */
+  /* Type scale, 17px body base, fluid at the top */
   --text-eyebrow: 0.8125rem;
   --text-eyebrow--line-height: 1.2;
   --text-eyebrow--letter-spacing: 0.12em;
@@ -175,7 +175,7 @@ body,
   color: var(--color-on-accent);
 }
 
-/* Orbit hero — each node circles gently in its own spot; labels stay upright
+/* Orbit hero, each node circles gently in its own spot; labels stay upright
    (the rotate is cancelled by the counter-rotate). Motion only when allowed. */
 @keyframes orbitFloat {
   from {

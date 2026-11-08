@@ -9,7 +9,7 @@ function Media({ study, className }: { study: CaseStudyMeta; className?: string 
       {study.image ? (
         <Image
           src={study.image}
-          alt={`${study.title} — case study preview`}
+          alt={`${study.title}, case study preview`}
           fill
           sizes="(max-width: 768px) 100vw, 640px"
           className="object-cover transition-transform duration-500 group-hover:scale-[1.03]"
@@ -83,7 +83,7 @@ function Tags({ tags }: { tags: string[] }) {
 
 export function CaseStudyCard({ study }: { study: CaseStudyMeta }) {
   const base =
-    "group block overflow-hidden rounded-3xl border border-line bg-surface transition-all duration-300 hover:-translate-y-1 hover:border-line-strong hover:shadow-[0_24px_60px_-30px_rgba(0,0,0,0.6)] focus:outline-none";
+    "group block overflow-hidden rounded-3xl border border-line bg-gradient-to-br from-bg to-surface transition-all duration-300 hover:-translate-y-1 hover:border-line-strong hover:shadow-[0_24px_60px_-30px_rgba(0,0,0,0.6)] focus:outline-none";
 
   // Featured: wide tile, image + text side by side.
   if (study.featured) {

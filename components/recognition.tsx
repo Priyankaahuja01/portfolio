@@ -16,7 +16,7 @@ export function Recognition() {
           {recognitions.map((r) => (
             <li
               key={r.title}
-              className="flex flex-col overflow-hidden rounded-2xl border border-line bg-surface"
+              className="flex flex-col overflow-hidden rounded-2xl border border-line bg-gradient-to-br from-bg to-surface"
             >
               <a
                 href={r.cert}
@@ -27,7 +27,7 @@ export function Recognition() {
               >
                 <Image
                   src={r.cert}
-                  alt={`${r.title} — certificate from ${r.issuer}`}
+                  alt={`${r.title}, certificate from ${r.issuer}`}
                   fill
                   sizes="(max-width: 640px) 100vw, 420px"
                   className="object-cover object-top transition-transform duration-500 group-hover:scale-[1.03]"

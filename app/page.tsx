@@ -8,9 +8,9 @@ export default function Home() {
       {/* Intro */}
       <section>
         <p className="max-w-3xl font-display text-3xl leading-[1.28] text-ink sm:text-[2.6rem]">
-          Hi, I&rsquo;m Priyanka — an accessibility-driven designer shaping
-          experiences for <span className="text-accent">B2C</span>,{" "}
-          <span className="text-forest">B2B</span> &amp;{" "}
+          Hi, I&rsquo;m Priyanka, a product designer and developer shaping
+          accessible experiences for <span className="text-accent">B2C</span>,{" "}
+          <span className="text-forest">B2B</span>, and{" "}
           <span className="text-accent">higher-education</span> enterprises.
         </p>
       </section>

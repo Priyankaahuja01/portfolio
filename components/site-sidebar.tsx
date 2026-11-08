@@ -63,18 +63,21 @@ function PrimaryNav({ onNavigate }: { onNavigate?: () => void }) {
 function Socials() {
   return (
     <ul className="space-y-2">
-      {socialLinks.map((link) => (
-        <li key={link.href}>
-          <a
-            href={link.href}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-eyebrow uppercase text-muted transition-colors hover:text-accent"
-          >
-            {link.label}
-          </a>
-        </li>
-      ))}
+      {socialLinks.map((link) => {
+        const external = link.href.startsWith("http");
+        return (
+          <li key={link.href}>
+            <a
+              href={link.href}
+              target={external ? "_blank" : undefined}
+              rel={external ? "noopener noreferrer" : undefined}
+              className="text-eyebrow uppercase text-muted transition-colors hover:text-accent"
+            >
+              {link.label}
+            </a>
+          </li>
+        );
+      })}
     </ul>
   );
 }
@@ -129,7 +132,7 @@ export function SiteSidebar() {
   return (
     <>
       {/* Desktop rail */}
-      <aside className="hidden lg:fixed lg:inset-y-0 lg:left-0 lg:z-40 lg:flex lg:w-72 lg:flex-col lg:justify-between lg:overflow-y-auto lg:border-r lg:border-line lg:bg-surface lg:px-8 lg:py-10">
+      <aside className="hidden lg:fixed lg:inset-y-0 lg:left-0 lg:z-40 lg:flex lg:w-72 lg:flex-col lg:justify-between lg:overflow-y-auto lg:border-r lg:border-line lg:bg-gradient-to-b lg:from-bg lg:to-surface lg:px-8 lg:py-10">
         <div>
           <Identity />
           <div className="mt-10">

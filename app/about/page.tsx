@@ -4,7 +4,7 @@ import { Container } from "@/components/container";
 export const metadata: Metadata = {
   title: "About",
   description:
-    "Priyanka Ahuja — product designer who ships code, across fintech, public-sector, and research-heavy domains.",
+    "Priyanka Ahuja, product designer who ships code, across fintech, public-sector, and research-heavy domains.",
 };
 
 export default function AboutPage() {
@@ -16,7 +16,7 @@ export default function AboutPage() {
           I design products and build the code that ships them.
         </h1>
 
-        {/* Scaffold — real About copy lands in the next chunk. */}
+        {/* Scaffold, real About copy lands in the next chunk. */}
         <div className="mt-16 rounded-2xl border border-dashed border-line-strong bg-surface p-8">
           <p className="text-eyebrow uppercase tracking-wide text-muted">
             Scaffold
