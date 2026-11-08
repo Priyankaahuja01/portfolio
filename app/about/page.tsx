@@ -40,6 +40,16 @@ const workflow = [
   },
 ];
 
+// Beyond-pixels photos. Fill `src` (e.g. "/about/hiking.jpg") when files arrive.
+const beyondPixels = [
+  { label: "Illustrations", src: "" },
+  { label: "Hiking", src: "" },
+  { label: "Coffee", src: "" },
+];
+
+// Paintings gallery, self-portrait first. Fill when image files arrive.
+const creativeWorks: { src: string; alt: string }[] = [];
+
 export default function AboutPage() {
   return (
     <div className="mx-auto max-w-4xl px-6 py-16 sm:px-10 lg:px-14 lg:py-20">
@@ -48,8 +58,7 @@ export default function AboutPage() {
         From finger paints to shipped code.
       </h1>
 
-      <div className="mt-10 grid items-start gap-10 lg:grid-cols-2 lg:gap-14">
-        <div className="space-y-5 text-lg leading-relaxed text-muted-strong">
+      <div className="mt-10 max-w-2xl space-y-5 text-lg leading-relaxed text-muted-strong">
         <p>
           Finger paints gave way to code, but the creative spark never faded.
           Tech fascinated me and led me to engineering and business degrees, yet
@@ -57,6 +66,16 @@ export default function AboutPage() {
           talking with 200+ customers a day revealed a world of user pain points
           I couldn&rsquo;t unsee.
         </p>
+      </div>
+
+      {/* eslint-disable-next-line @next/next/no-img-element */}
+      <img
+        src="/about/whiteboard.webp"
+        alt="Priyanka mapping a product's design process on a whiteboard covered in sticky notes"
+        className="mx-auto my-12 w-full max-w-2xl"
+      />
+
+      <div className="max-w-2xl space-y-5 text-lg leading-relaxed text-muted-strong">
         <p>
           That is when UX design clicked into place: the missing piece that
           merged my love of tech with my childhood creative fire. Freelancing
@@ -69,15 +88,43 @@ export default function AboutPage() {
           that resonate instead of frustrate. No more digital mazes, just
           experiences as delightful and engaging as those childhood craft kits.
         </p>
-        </div>
-
-        {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img
-          src="/about/whiteboard.webp"
-          alt="Priyanka mapping a product's design process on a whiteboard covered in sticky notes"
-          className="w-full self-center"
-        />
       </div>
+
+      <section className="mt-20">
+        <h2 className="border-b border-line pb-4 font-display text-2xl text-ink">
+          Creative
+        </h2>
+        <p className="mt-6 max-w-2xl text-lg leading-relaxed text-muted-strong">
+          When I am not designing screens, I am painting. A few pieces from the
+          canvas.
+        </p>
+        {creativeWorks.length > 0 ? (
+          <div className="mt-8 columns-2 gap-4 sm:columns-3 [&>*]:mb-4">
+            {creativeWorks.map((c) => {
+              // eslint-disable-next-line @next/next/no-img-element
+              return (
+                <img
+                  key={c.src}
+                  src={c.src}
+                  alt={c.alt}
+                  className="w-full rounded-xl border border-line"
+                />
+              );
+            })}
+          </div>
+        ) : (
+          <div className="mt-8 grid grid-cols-2 gap-4 sm:grid-cols-3">
+            {Array.from({ length: 6 }).map((_, i) => (
+              <div
+                key={i}
+                className="flex aspect-square items-center justify-center rounded-xl border border-dashed border-line-strong bg-surface text-eyebrow uppercase text-faint"
+              >
+                Painting
+              </div>
+            ))}
+          </div>
+        )}
+      </section>
 
       <section className="mt-20">
         <h2 className="border-b border-line pb-4 font-display text-2xl text-ink">
@@ -111,16 +158,27 @@ export default function AboutPage() {
           creativity, and I am always up for the next adventure (and happy to
           hear about yours).
         </p>
-        <ul className="mt-6 flex flex-wrap gap-2">
-          {["Illustrations", "Hiking", "Coffee"].map((h) => (
-            <li
-              key={h}
-              className="rounded-full border border-line px-3 py-1 text-eyebrow uppercase text-muted"
-            >
-              {h}
-            </li>
+        <div className="mt-8 grid grid-cols-3 gap-4">
+          {beyondPixels.map((b) => (
+            <figure key={b.label} className="m-0">
+              {b.src ? (
+                // eslint-disable-next-line @next/next/no-img-element
+                <img
+                  src={b.src}
+                  alt={b.label}
+                  className="aspect-[4/5] w-full rounded-xl border border-line object-cover"
+                />
+              ) : (
+                <div className="flex aspect-[4/5] items-center justify-center rounded-xl border border-dashed border-line-strong bg-surface text-center text-eyebrow uppercase text-faint">
+                  {b.label}
+                </div>
+              )}
+              <figcaption className="mt-2 text-eyebrow uppercase text-muted">
+                {b.label}
+              </figcaption>
+            </figure>
           ))}
-        </ul>
+        </div>
       </section>
 
       <section className="mt-20">
