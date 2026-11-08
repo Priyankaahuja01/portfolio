@@ -116,7 +116,7 @@ function Identity({ compact }: { compact?: boolean }) {
             Product Designer /<br />Web Developer
           </span>
           <span className="mt-1 block text-eyebrow uppercase text-faint">
-            University of Wyoming
+            @<br />University of Wyoming
           </span>
         </>
       )}
