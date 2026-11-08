@@ -141,12 +141,16 @@ export function SiteSidebar() {
         </div>
         <div className="mt-10">
           <Socials />
-          <div className="mt-6 flex items-center justify-between border-t border-line pt-5">
+          <div className="mt-6 border-t border-line pt-5">
             <p className="text-eyebrow text-muted">© {year}</p>
-            <ThemeToggle />
           </div>
         </div>
       </aside>
+
+      {/* Fixed theme toggle, top-right corner (desktop) */}
+      <div className="fixed right-5 top-5 z-50 hidden lg:block">
+        <ThemeToggle />
+      </div>
 
       {/* Mobile top bar */}
       <header className="sticky top-0 z-40 border-b border-line/70 bg-bg/85 backdrop-blur-md lg:hidden">
