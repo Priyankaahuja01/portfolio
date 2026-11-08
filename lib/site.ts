@@ -28,8 +28,7 @@ export const socialLinks: NavLink[] = [
   { label: "Email", href: "mailto:priyankaahuja0532@gmail.com" },
   { label: "LinkedIn", href: "https://www.linkedin.com/in/priyankaahuja0107/" },
   { label: "GitHub", href: "https://github.com/Priyankaahuja01" },
-  // TODO: confirm Pri's Instagram handle (placeholder for now).
-  { label: "Instagram", href: "https://www.instagram.com/" },
+  // Instagram to be added once Pri shares the handle.
 ];
 
 export type CaseStudyStatus = "live" | "in-progress" | "gated";
