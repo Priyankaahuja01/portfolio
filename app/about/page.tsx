@@ -48,7 +48,8 @@ export default function AboutPage() {
         From finger paints to shipped code.
       </h1>
 
-      <div className="mt-10 max-w-2xl space-y-5 text-lg leading-relaxed text-muted-strong">
+      <div className="mt-10 grid items-start gap-10 lg:grid-cols-2 lg:gap-14">
+        <div className="space-y-5 text-lg leading-relaxed text-muted-strong">
         <p>
           Finger paints gave way to code, but the creative spark never faded.
           Tech fascinated me and led me to engineering and business degrees, yet
@@ -68,6 +69,14 @@ export default function AboutPage() {
           that resonate instead of frustrate. No more digital mazes, just
           experiences as delightful and engaging as those childhood craft kits.
         </p>
+        </div>
+
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img
+          src="/about/whiteboard.webp"
+          alt="Priyanka mapping a product's design process on a whiteboard covered in sticky notes"
+          className="w-full self-center"
+        />
       </div>
 
       <section className="mt-20">
