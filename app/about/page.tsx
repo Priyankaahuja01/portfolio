@@ -70,7 +70,13 @@ export default function AboutPage() {
         From finger paints to shipped code.
       </h1>
 
-      <div className="mt-10 max-w-2xl space-y-5 text-lg leading-relaxed text-muted-strong">
+      <div className="mt-10 max-w-3xl text-lg leading-relaxed text-muted-strong [&>p]:mb-5">
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img
+          src="/about/whiteboard.webp"
+          alt="Priyanka mapping a product's design process on a whiteboard covered in sticky notes"
+          className="mb-4 w-full rounded-xl md:float-right md:mb-3 md:ml-7 md:w-[46%]"
+        />
         <p>
           Finger paints gave way to code, but the creative spark never faded.
           Tech fascinated me and led me to engineering and business degrees, yet
@@ -78,16 +84,6 @@ export default function AboutPage() {
           talking with 200+ customers a day revealed a world of user pain points
           I couldn&rsquo;t unsee.
         </p>
-      </div>
-
-      {/* eslint-disable-next-line @next/next/no-img-element */}
-      <img
-        src="/about/whiteboard.webp"
-        alt="Priyanka mapping a product's design process on a whiteboard covered in sticky notes"
-        className="mx-auto my-12 w-full max-w-2xl"
-      />
-
-      <div className="max-w-2xl space-y-5 text-lg leading-relaxed text-muted-strong">
         <p>
           That is when UX design clicked into place: the missing piece that
           merged my love of tech with my childhood creative fire. Freelancing
@@ -100,6 +96,7 @@ export default function AboutPage() {
           that resonate instead of frustrate. No more digital mazes, just
           experiences as delightful and engaging as those childhood craft kits.
         </p>
+        <div className="clear-both" />
       </div>
 
       <section className="mt-20">
@@ -178,7 +175,7 @@ export default function AboutPage() {
                 <img
                   src={b.src}
                   alt={b.label}
-                  className="aspect-[4/5] w-full rounded-xl border border-line object-cover"
+                  className="w-full rounded-xl border border-line"
                 />
               ) : (
                 <div className="flex aspect-[4/5] items-center justify-center rounded-xl border border-dashed border-line-strong bg-surface text-center text-eyebrow uppercase text-faint">
