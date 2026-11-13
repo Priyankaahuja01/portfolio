@@ -87,20 +87,19 @@ export function AvocadoCompanion() {
       const cy = y + H / 2;
 
       if (mouseX !== null && mouseY !== null) {
-        const d = Math.hypot(mouseX - cx, mouseY - cy);
-        if (d < 180) {
-          tx = Math.min(Math.max(mouseX - W / 2, MIN_X), maxX());
-          ty = Math.min(Math.max(mouseY - H / 2, 90), maxY());
-          idle = 24;
-        }
-      }
-      if (idle > 0) {
+        // Cursor on screen: chase it, trailing just behind so it reads as a
+        // companion rather than a stuck-to-the-pointer sprite.
+        tx = Math.min(Math.max(mouseX - W / 2, MIN_X), maxX());
+        ty = Math.min(Math.max(mouseY - H / 2, 90), maxY());
+        idle = 20;
+      } else if (idle > 0) {
+        // Cursor left the window: wander on its own.
         idle--;
         if (idle === 0) pick();
       }
 
-      x += (tx - x) * 0.035;
-      y += (ty - y) * 0.035;
+      x += (tx - x) * 0.085;
+      y += (ty - y) * 0.085;
       if (hop > 0) {
         hop *= 0.86;
         if (hop < 0.02) hop = 0;
