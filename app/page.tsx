@@ -1,3 +1,4 @@
+import { AvocadoCompanion } from "@/components/avocado-companion";
 import { CaseStudyCard } from "@/components/case-study-card";
 import { Recognition } from "@/components/recognition";
 import { caseStudies } from "@/lib/site";
@@ -33,6 +34,9 @@ export default function Home() {
 
       {/* Recognition */}
       <Recognition />
+
+      {/* Ambient roaming companion (desktop only) */}
+      <AvocadoCompanion />
     </div>
   );
 }

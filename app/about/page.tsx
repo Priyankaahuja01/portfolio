@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { AvocadoCompanion } from "@/components/avocado-companion";
 import { site } from "@/lib/site";
 
 export const metadata: Metadata = {
@@ -195,6 +196,8 @@ export default function AboutPage() {
           {site.email}
         </a>
       </section>
+
+      <AvocadoCompanion />
     </div>
   );
 }

@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { AvocadoCompanion } from "@/components/avocado-companion";
 import { socialLinks, site } from "@/lib/site";
 
 export const metadata: Metadata = {
@@ -257,6 +258,8 @@ export default function ResumePage() {
           </svg>
         </a>
       </div>
+
+      <AvocadoCompanion />
     </div>
   );
 }
